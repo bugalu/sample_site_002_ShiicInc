@@ -1,0 +1,36 @@
+{
+  "name": "shiic_is-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "browser-sync": "^2.26.7",
+    "css-declaration-sorter": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-ejs": "^4.1.2",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugalu/sample_site_ShiicInc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bugalu/sample_site_ShiicInc/issues"
+  },
+  "homepage": "https://github.com/bugalu/sample_site_ShiicInc#readme",
+  "description": ""
+}

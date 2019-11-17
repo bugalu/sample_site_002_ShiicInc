@@ -6,8 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
-    "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   @media (min-width: 320px) {
     font-size: calc(0.8125rem + ((1vw - 4.8px) * 1.0417));
   }
