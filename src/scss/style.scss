@@ -270,6 +270,7 @@ span.swiper-pagination-bullet {
   &__heading {
     align-self: center;
     color: #fff;
+    font-size: 1rem;
     font-weight: normal;
     letter-spacing: 2px;
   }
@@ -283,7 +284,7 @@ span.swiper-pagination-bullet {
     .news__content + .news__content {
       margin-top: 7px;
     }
-    .news__content date {
+    .news__content time {
       margin-right: 10px;
     }
     .news__content p {

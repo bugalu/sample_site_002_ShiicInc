@@ -383,6 +383,7 @@ span.swiper-pagination-bullet-active {
   -ms-flex-item-align: center;
   align-self: center;
   color: #fff;
+  font-size: 1rem;
   font-weight: normal;
   letter-spacing: 2px;
 }
@@ -406,7 +407,7 @@ span.swiper-pagination-bullet-active {
   margin-top: 7px;
 }
 
-.news__body .news__content date {
+.news__body .news__content time {
   margin-right: 10px;
 }
 
