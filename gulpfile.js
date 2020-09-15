@@ -1,106 +1,60 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass"); //Sassコンパイル
-var plumber = require("gulp-plumber"); //エラー時の強制終了を防止
-var notify = require("gulp-notify"); //エラー発生時にデスクトップ通知する
-var sassGlob = require("gulp-sass-glob"); //@importの記述を簡潔にする
-var browserSync = require("browser-sync"); //ブラウザ反映
-var postcss = require("gulp-postcss"); //autoprefixerとセット
-var autoprefixer = require("autoprefixer"); //ベンダープレフィックス付与
-var cssdeclsort = require("css-declaration-sorter"); //css並べ替え
-var imagemin = require("gulp-imagemin");
-var pngquant = require("imagemin-pngquant");
-var mozjpeg = require("imagemin-mozjpeg");
-var ejs = require("gulp-ejs");
-var rename = require("gulp-rename"); //.ejsの拡張子を変更
+const { src, dest, watch, series, parallel } = require('gulp');
+const loadPlugins = require('gulp-load-plugins');
+const $ = loadPlugins();
 
-// scssのコンパイル
-gulp.task("sass", function() {
-  return gulp
-    .src("./src/scss/**/*.scss")
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    ) //エラーチェック
-    .pipe(sassGlob()) //importの読み込みを簡潔にする
-    .pipe(
-      sass({
-        outputStyle: "expanded" //expanded, nested, compact, compressedから選択
-      })
-    )
-    .pipe(
-      postcss([
-        autoprefixer({
-          // ☆IEは11以上、Androidは4.4以上
-          // その他は最新2バージョンで必要なベンダープレフィックスを付与する
-          overrideBrowserslist: ["last 2 versions", "ie >= 11", "Android >= 4"],
-          cascade: false
-        })
-      ])
-    )
-    .pipe(postcss([cssdeclsort({ order: "alphabetically" })])) //プロパティをソートし直す(アルファベット順)
-    .pipe(gulp.dest("./src/css")); //コンパイル後の出力先
-});
+//ベンダープレフィックス
+const autoprefixer = require('autoprefixer');
 
-// 保存時のリロード
-gulp.task("browser-sync", function(done) {
-  browserSync.init({
-    //ローカル開発
+//動作確認用サーバー
+const browserSync = require('browser-sync');
+const server = browserSync.create();
+
+function compile() {
+  return src(['./src/ejs/**/*.ejs', '!' + './src/ejs/**/_*.ejs'])
+    .pipe($.ejs({}, {}, { ext: ".html" }))
+    .pipe($.rename({ extname: ".html" }))
+    .pipe(dest('./dist'));
+}
+
+function styles() {
+  return src('./src/sass/**/*.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass())
+    .pipe($.postcss([
+      autoprefixer()
+    ]))
+    .pipe($.csscomb('zen.json'))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(dest('./dist/css'));
+}
+
+function scripts() {
+  return src('./src/ts/*.ts')
+    .pipe($.sourcemaps.init())
+    .pipe($.typescript())
+    .pipe($.sourcemaps.write('.'))
+    .pipe(dest('./dist/js'));
+}
+
+function startAppServer() {
+  server.init({
     server: {
-      baseDir: "./src/",
-      index: "index.html"
+      baseDir: './dist'
     }
   });
-  done();
-});
+  watch('./src/**/*.ejs', compile);
+  watch('./src/**/*.ejs').on('change', server.reload);
+  watch('./src/**/*.scss', styles);
+  watch('./src/**/*.scss').on('change', server.reload);
+  // watch('./src/**/*.ts', lint);
+  watch('./src/**/*.ts', scripts);
+  watch('./src/**/*.ts').on('change', server.reload);
+}
 
-gulp.task("bs-reload", function(done) {
-  browserSync.reload();
-  done();
-});
 
-gulp.task("ejs", done => {
-  gulp
-    .src(["ejs/**/*.ejs", "!" + "ejs/**/_*.ejs"])
-    .pipe(
-      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
-    ) //エラーチェック
-    .pipe(ejs({}, {}, { ext: ".html" })) //ejsを纏める
-    .pipe(rename({ extname: ".html" })) //拡張子をhtmlに
-    .pipe(gulp.dest("./")); //出力先
-  done();
-});
-
-// 監視
-gulp.task("watch", function(done) {
-  gulp.watch("./src/**/index.html", gulp.task("bs-reload")); //index.htmlが更新されたらbs-reloadを実行
-  gulp.watch("./src/scss/**/*.scss", gulp.task("sass")); //sassが更新されたらgulp sassを実行
-  gulp.watch("./src/scss/**/*.scss", gulp.task("bs-reload")); //sassが更新されたらbs-reloadを実行
-  gulp.watch("./src/js/*.js", gulp.task("bs-reload")); //jsが更新されたらbs-reloadを実行
-  gulp.watch("./ejs/**/*.ejs", gulp.task("ejs")); //ejsが更新されたらgulp-ejsを実行
-  gulp.watch("./ejs/**/*.ejs", gulp.task("bs-reload")); //ejsが更新されたらbs-reloadを実行
-});
-
-// default
-gulp.task("default", gulp.series(gulp.parallel("browser-sync", "watch")));
-
-//圧縮率の定義
-var imageminOption = [
-  pngquant({ quality: [70 - 85] }),
-  mozjpeg({ quality: 85 }),
-  imagemin.gifsicle({
-    interlaced: false,
-    optimizationLevel: 1,
-    colors: 256
-  }),
-  imagemin.jpegtran(),
-  imagemin.optipng(),
-  imagemin.svgo()
-];
-// 画像の圧縮
-// $ gulp imageminで./src/img/base/フォルダ内の画像を圧縮し./src/img/フォルダへ
-// .gifが入っているとエラーが出る
-gulp.task("imagemin", function() {
-  return gulp
-    .src("./src/img/base/*.{png,jpg,gif,svg}")
-    .pipe(imagemin(imageminOption))
-    .pipe(gulp.dest("./src/img"));
-});
+// const serve = series(parallel(compile, styles, series(lint, scripts)), startAppServer);
+const serve = series(parallel(compile, styles, scripts), startAppServer);
+exports.compile = compile;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.serve = serve;

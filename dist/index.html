@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/ress.css" />
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css?201907220956" />
+
+    <!-- wow -->
+    <script src="./js/wow.min.js"></script>
+    <!-- fonts -->
+    <script src="https://kit.fontawesome.com/ea672cdcce.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function(d) {
+        var config = {
+            kitId: "yah4liq",
+            scriptTimeout: 3000,
+            async: true
+          },
+          h = d.documentElement,
+          t = setTimeout(function() {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function() {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+
+    <title>Top | OR-IKEDA sample</title>
+  </head>
+
+  <body>
+    <div class="top font-small">
+      <i class="fas fa-exclamation-triangle" style="color: crimson;"></i>
+      当サイトは<a href="https://or-ikeda.net">ORイケダ事務所</a
+      >の制作サンプルサイトです。内容はダミーとなっており、掲載されている事業体及びサービスは実在しません。
+    </div>
+    <div class="wrapper">
+      <div class="header font-x-small">
+        <div class="header-upper">
+          <div class="header-upper__item">
+            <p class="header-upper__trade-name">
+              Since 1969 in Hokkaido
+            </p>
+          </div>
+          <div class="header-upper__item">
+            <h1 class="header-upper__symbol-logo">
+              <a href="#    "
+                ><img src="./img/logo_shiic04.png" alt="Shiic Inc."
+              /></a>
+            </h1>
+          </div>
+          <div class="header-upper__shop-nav header-upper__item">
+            <ul>
+              <li>
+                <a href="#" target="_blank" class="font-black">Sign Up</a>
+              </li>
+              <li>
+                <a href="#" target="_blank" class="font-black"
+                  ><span>Sign In</span></a
+                >
+              </li>
+              <li>
+                <a href="#" target="_blank" class="font-black"
+                  ><span>Cart</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="header-upper__menu-bar-wrapper header-upper__item">
+            <div class="header-upper__menu-bar" ontouchstart="">
+              <i class="fas fa-bars fa-2x" id="show"></i>
+            </div>
+          </div>
+          <!-- /.shop-nav -->
+        </div>
+        <!-- / .header-upper -->
+
+        <div class="header-lower">
+          <ul class="header-lower__global-nav" id="globalNav">
+            <li ontouchstart="">
+              <a href="#about" class="font-black">About</a>
+            </li>
+            <li ontouchstart="">
+              <a href="#method" class="font-black">Method</a>
+            </li>
+            <li ontouchstart="">
+              <a href="#store" class="font-black">Store</a>
+            </li>
+            <li ontouchstart="">
+              <a href="#shopping" class="font-black">Shopping</a>
+            </li>
+            <li ontouchstart="">
+              <a href="#company" class="font-black">Company</a>
+            </li>
+            <li ontouchstart="" class="facebook only-desktop">
+              <a href="/" target="_blank"
+                ><i class="fab fa-facebook fa-lg"></i
+              ></a>
+            </li>
+            <li ontouchstart="" class="instagram">
+              <a href="/" target="_blank"
+                ><i class="fab fa-instagram fa-lg"></i
+              ></a>
+            </li>
+          </ul>
+          <!-- /.global-nav -->
+          <ul class="header-lower__shop-nav" id="shopNav">
+            <li ontouchstart=""><a href="#" class="font-black">Sign Up</a></li>
+            <li ontouchstart=""><a href="#" class="font-black">Sign In</a></li>
+            <li ontouchstart=""><a href="#" class="font-black">Cart</a></li>
+          </ul>
+          <!-- / under 767px / shop nav  -->
+        </div>
+        <!-- / .header-lower -->
+      </div>
+      <!-- /.header -->
+    </div>
+    <!-- /.wrapper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./img/sld1_accordion-691011_1920.jpg" alt="Swiper01" />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="./img/sld3_jessica-knowlden-nyBUfH9MkL4-unsplash.jpg"
+            alt="Swiper02"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="./img/sld4_tim-bechervaise-RGZni84LIwY-unsplash.jpg"
+            alt="Swiper03"
+          />
+        </div>
+        <!-- <div class="swiper-slide">
+          <img
+            src="./img/sld2_laetitia-buscaylet-9CZwmGE5xAk-unsplash.jpg"
+            alt="Swiper04"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="./img/sld5_banjo-player-fashion-man-387.jpg"
+            alt="Swiper05"
+          />
+        </div> -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+    <!-- /.key-head -->
+
+    <div class="content">
+      <section class="news wow fadeIn" data-wow-delay="0.5s">
+        <div class="news__deck">
+          <div class="news__head bg-gray">
+            <h2 class="news__heading">News!</h2>
+          </div>
+          <div class="news__body bg-smoke">
+            <ul>
+              <li class="news__content font-small">
+                <time datetime="2019-07-14">2019/07/14</time>
+                <p>親譲りの無鉄砲で小供の時から損ばかりしている。</p>
+              </li>
+              <li class="news__content font-small">
+                <time datetime="2019-07-10">2019/07/10</time>
+                <p>
+                  メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。
+                </p>
+              </li>
+              <li class="news__content font-small">
+                <time datetime="2019-07-04">2019/07/04</time>
+                <p>
+                  ゴーシュは町の活動写真館でセロを弾く係りでした。けれどもあんまり上手でないという評判でした。
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- / news__body -->
+        </div>
+        <div class="news__more font-gray">
+          <a href="#">[more...]</a>
+        </div>
+      </section>
+      <!-- /section .news -->
+
+      <section id="about" class="about">
+        <div class="about__header wow fadeIn" data-wow-delay="0.5s">
+          <h2>about Shiic Inc.</h2>
+        </div>
+        <div class="about__text wow fadeIn" data-wow-delay="0.5s">
+          <p>
+            ある日の暮方の事である。一人の下人が、羅生門の下で雨やみを待っていた。広い門の下には、この男のほかに誰もいない。ただ、所々丹塗の剥げた、大きな円柱に、蟋蟀が一匹とまっている。羅生門が、朱雀大路にある以上は、この男のほかにも、雨やみをする市女笠や揉烏帽子が、もう二三人はありそうなものである。それが、この男のほかには誰もいない。何故かと云うと、この二三年、京都には、地震とか辻風とか火事とか饑饉とか云う災がつづいて起った。そこで洛中のさびれ方は一通りではない。旧記によると、仏像や仏具を打砕いて、その丹がついたり、金銀の箔がついたりした木を、路ばたにつみ重ねて、薪の料に売っていたと云う事である。
+          </p>
+        </div>
+        <div
+          class="about__button about__button-roll font-purple wow fadeIn"
+          data-wow-delay="0.5s"
+        >
+          <div class="btn">
+            <span class="font-x-small">&gt;&gt;</span> History of Shiic
+          </div>
+        </div>
+      </section>
+      <!-- / section .about -->
+
+      <!-- section .method -->
+      <section id="method" class="method">
+        <h2 class="wow fadeIn" data-wow-delay="0.5s">Method</h2>
+        <div class="method__text wow fadeIn" data-wow-delay="0.5s">
+          <p>
+            堀川の大殿様のやうな方は、これまでは固より、後の世には恐らく二人とはいらつしやいますまい。噂に聞きますと、あの方の御誕生になる前には、大威徳明王の御姿が御母君の夢枕にお立ちになつたとか申す事でございますが、兎に角御生れつきから、並々の人間とは御違ひになつてゐたやうでございます。でございますから、あの方の為さいました事には、一つとして私どもの意表に出てゐないものはございません。
+          </p>
+        </div>
+        <div class="method__deck">
+          <div class="method__area wow fadeIn" data-wow-delay="0.5s">
+            <img
+              src="./img/m1_aaron-blanco-tejedor--GsPtETXbfo-unsplash.jpg"
+              alt="cuban trumpeter"
+            />
+            <p class="caption">管楽器</p>
+          </div>
+          <div class="method__area wow fadeIn" data-wow-delay="0.7s">
+            <img
+              src="./img/m3_gregory-hayes-JdYPVamcc84-unsplash.jpg"
+              alt="cuban trumpeter"
+            />
+            <p class="caption">鍵盤楽器</p>
+          </div>
+          <div class="method__area wow fadeIn" data-wow-delay="0.9s">
+            <img
+              src="./img/m2_band-beat-black-and-white-65717.jpg"
+              alt="cuban trumpeter"
+            />
+            <p class="caption">打楽器</p>
+          </div>
+        </div>
+      </section>
+      <!-- /section .method -->
+
+      <div class="wide-wrapper bg-smoke">
+        <!-- section .store -->
+        <section id="store" class="store">
+          <h2 class=" wow fadeIn" data-wow-delay="0.5s">Store</h2>
+          <div class="store__text wow fadeIn" data-wow-delay="0.5s">
+            <p>
+              木曾路はすべて山の中である。あるところは岨づたいに行く崖の道であり、あるところは数十間の深さに臨む木曾川の岸であり、あるところは山の尾をめぐる谷の入り口である。一筋の街道はこの深い森林地帯を貫いていた。東ざかいの桜沢から、西の十曲峠まで、木曾十一宿はこの街道に添うて、二十二里余にわたる長い谿谷の間に散在していた。
+            </p>
+          </div>
+          <div class="store__deck">
+            <div class="store__cell wow fadeIn" data-wow-delay="0.5s">
+              <img
+                src="./img/f01_rich-smith-zE3K2VWyNRk-unsplash.jpg"
+                alt="Cigar"
+              />
+              <p class="caption">Cigar</p>
+            </div>
+            <div class="store__cell wow fadeIn" data-wow-delay="0.7s">
+              <img
+                src="./img/f02_johann-trasch-h7E770rhzrU-unsplash.jpg"
+                alt="Mojito"
+              />
+              <p class="caption">Mojito</p>
+            </div>
+            <div class="store__cell wow fadeIn" data-wow-delay="0.9s">
+              <img
+                src="./img/PapayaFruitCubanMarketstephan-valentin-3wUdqyXa-kI-unsplash.jpg"
+                alt="Papaya"
+              />
+              <p class="caption">Papaya</p>
+            </div>
+            <div class="store__cell wow fadeIn" data-wow-delay="1.1s">
+              <img src="./img/passion-fruit-daiquiri-906099_640.jpg" alt="" />
+              <p class="caption">Fruit Daiquiri</p>
+            </div>
+          </div>
+        </section>
+        <!-- / section .store -->
+        <!-- section .shopping -->
+        <section id="shopping" class="shopping">
+          <h2 class=" wow fadeIn" data-wow-delay="0.5s">Shopping</h2>
+          <div class="shopping__text wow fadeIn" data-wow-delay="0.5s">
+            <p>
+              蕗屋清一郎が、何故これから記す様な恐ろしい悪事を思立ったか、その動機については詳しいことは分らぬ。又仮令分ったとしてもこのお話には大して関係がないのだ。彼がなかば苦学見たいなことをして、ある大学に通っていた所を見ると、学資の必要に迫られたのかとも考えられる。彼は稀に見る秀才で、而も非常な勉強家だったから、学資を得る為に、つまらぬ内職に時を取られて、好きな読書や思索が十分出来ないのを残念に思っていたのは確かだ。
+            </p>
+          </div>
+          <div class="shopping__deck">
+            <div class="shopping__cell wow fadeIn" data-wow-delay="0.5s">
+              <img
+                src="./img/d01_alexander-kunze-uLh71gTmZ4g-unsplash.jpg"
+                alt=""
+              />
+              <p class="caption">La Habana Vieja</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="0.7s">
+              <img src="./img/d02_fruit-2445345_1280.jpg" alt="" />
+              <p class="caption">Habana</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="0.9s">
+              <img
+                src="./img/d03_raul-cacho-oses-85gp2jRQS3Y-unsplash.jpg"
+                alt=""
+              />
+              <p class="caption">Malecón</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="1.1s">
+              <img src="./img/d14_capitol_havana-4046935_640.jpg" alt="" />
+              <p class="caption">El Capitolio</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="1.3s">
+              <img
+                src="./img/d11_augustin-de-montesquiou-RqMIFcDLeos-unsplash.jpg"
+                alt=""
+              />
+              <p class="caption">Habana</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="1.5s">
+              <img src="./img/d07_morro-castle-793597_640.jpg" alt="" />
+              <p class="caption">Castillo del Morro</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="1.7s">
+              <img
+                src="./img/d15_national-theater-cuba-3817781_640.jpg"
+                alt=""
+              />
+              <p class="caption">Gran Teatro de La Habana</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="1.9s">
+              <img src="./img/d08_hotel-1249348_640.jpg" alt="" />
+              <p class="caption">Las Terrazas</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="2.1s">
+              <img src="./img/d09_che-2680432_640.jpg" alt="" />
+              <p class="caption">Plaza de la Revolucion</p>
+            </div>
+            <div class="shopping__cell wow fadeIn" data-wow-delay="2.3s">
+              <img src="./img/d10_alex-k-D9kLuKTBkno-unsplash.jpg" alt="" />
+              <p class="caption">Varadero</p>
+            </div>
+          </div>
+        </section>
+        <!-- / section .shopping -->
+      </div>
+      <!-- / wide-wrapper -->
+    </div>
+    <!-- /.content -->
+
+    <footer id="company" class="footer bg-purple font-white font-small">
+      <ul class="footer__nav">
+        <li><a href="">Payment</a></li>
+        <li><a href="">Delivery</a></li>
+        <li>
+          <a href="">Privacy Policy</a>
+        </li>
+        <li><a href="">Legal Notation</a></li>
+        <li>
+          <a href="">Contact</a>
+        </li>
+      </ul>
+      <a href="/"
+        ><img
+          src="./img/logo_shiic04_white.png"
+          alt="Shiic Inc."
+          class="footer__logo"
+      /></a>
+      <div class="footer__info font-x-small">
+        <address>
+          Ｘ県Ｙ市Ｚ区Ａ町0番0号（<a
+            href="https://goo.gl/maps/*******"
+            target="_blank"
+            >Map</a
+          >）
+        </address>
+        <p class="tel">Tel 000-000-0000</p>
+      </div>
+
+      <p class="copyright">
+        Copyright &copy; Office OR-IKEDA All Rights Reserved.
+      </p>
+    </footer>
+    <a href="#"><i class="fas fa-caret-square-up fa-2x return-to-top"></i></a>
+    <script src="./js/swiper.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        speed: 500,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets"
+        }
+      });
+    </script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

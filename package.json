@@ -1,36 +1,33 @@
 {
-  "name": "shiic_is-code",
+  "name": "gulp",
   "version": "1.0.0",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp serve"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
-    "css-declaration-sorter": "^4.0.1",
     "gulp": "^4.0.2",
-    "gulp-ejs": "^4.1.2",
-    "gulp-imagemin": "^6.2.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.1",
+    "gulp-csscomb": "^3.1.0",
+    "gulp-ejs": "^5.1.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.4",
     "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^8.0.0"
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^4.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bugalu/sample_site_ShiicInc.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bugalu/sample_site_ShiicInc/issues"
-  },
-  "homepage": "https://github.com/bugalu/sample_site_ShiicInc#readme",
-  "description": ""
+  "dependencies": {},
+  "browserslist": [
+    "last 1 versions",
+    "IE >= 11",
+    "Android >= 4"
+  ],
+  "gulp-config": {}
 }
