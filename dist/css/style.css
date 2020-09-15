@@ -41,8 +41,6 @@ section {
   width: 80vw; }
 
 /*:::::::::: DESIGN ::::::::::*/
-/*:::::::::: DESIGN ::::::::::*/
-/*:::::::::: DESIGN ::::::::::*/
 /*:::::::::: background-color ::::::::::*/
 .bg-gray {
   background: dimgray; }
@@ -84,7 +82,6 @@ section {
 .font-x-large {
   font-size: 36px; }
 
-/*:::::::::: LAYOUT ::::::::::*/
 /*:::::::::: LAYOUT ::::::::::*/
 /*:::::::::: header ::::::::::*/
 .header {
@@ -375,15 +372,15 @@ span.swiper-pagination-bullet {
       opacity: 0.8;}
 
 /*:::::::::: / section .about ::::::::::*/
-/*:::::::::: section .method ::::::::::*/
-.method {
+/*:::::::::: section .music ::::::::::*/
+.music {
   margin-top: 60px;
   padding-bottom: 40px; }
-  .method__text {
+  .music__text {
     margin-top: 30px; }
-    .method__text p {
+    .music__text p {
       text-align: left; }
-  .method__deck {
+  .music__deck {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -391,11 +388,11 @@ span.swiper-pagination-bullet {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-top: 30px; }
-  .method__area img {
+  .music__area img {
     max-width: 340px; 
     width: 24.89vw;}
 
-/*:::::::::: / section#method ::::::::::*/
+/*:::::::::: / section#music ::::::::::*/
 .wide-wrapper {
   margin-top: 60px; }
 

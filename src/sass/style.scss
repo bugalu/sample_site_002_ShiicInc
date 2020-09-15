@@ -43,8 +43,6 @@ section {
 }
 
 /*:::::::::: DESIGN ::::::::::*/
-/*:::::::::: DESIGN ::::::::::*/
-/*:::::::::: DESIGN ::::::::::*/
 
 /*:::::::::: background-color ::::::::::*/
 .bg {
@@ -94,7 +92,6 @@ section {
   }
 }
 
-/*:::::::::: LAYOUT ::::::::::*/
 /*:::::::::: LAYOUT ::::::::::*/
 /*:::::::::: header ::::::::::*/
 .header {
@@ -333,8 +330,8 @@ span.swiper-pagination-bullet {
   }
 }
 /*:::::::::: / section .about ::::::::::*/
-/*:::::::::: section .method ::::::::::*/
-.method {
+/*:::::::::: section .music ::::::::::*/
+.music {
   margin-top: 60px;
   &__text {
     margin-top: 30px;
@@ -353,7 +350,7 @@ span.swiper-pagination-bullet {
     max-width: 340px;
   }
 }
-/*:::::::::: / section#method ::::::::::*/
+/*:::::::::: / section#music ::::::::::*/
 .wide-wrapper {
   margin-top: 60px;
 }
