@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/*:::::::::: FOUNDATION :::::::::*/
+/* ======================================================
+   Foundation
+   ====================================================== */
 html {
   scroll-behavior: smooth; }
 
@@ -18,28 +20,20 @@ body {
     list-style: none;
     text-decoration: none; }
 
+/* default style
+   ------------------------------------------------------ */
 h1,
 h2,
 h3,
 h4 {
-  color: purple;
+  color: #800080;
   font-weight: 400; 
-  font-family: "Libre Franklin", sans-serif;}
+  font-family: "Josefin Sans", sans-serif;}
 
 .caption {
   font-family: a-otf-midashi-mi-ma31-pr6n, serif; }
 
-section {
-  margin: 0 auto;
-  max-width: 1080px;
-  width: 80vw; }
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 80vw; }
-
-/*:::::::::: background-color ::::::::::*/
+/* ---------- background color ---------- */
 .bg-gray {
   background: dimgray; }
 
@@ -49,7 +43,7 @@ section {
 .bg-smoke {
   background-color: whitesmoke; }
 
-/*:::::::::: font-color ::::::::::*/
+/* ---------- font color ---------- */
 .font-black {
   color: #000; }
 
@@ -62,9 +56,9 @@ section {
 .font-white {
   color: white; }
 
-/*:::::::::: font-size ::::::::::*/
+/* ---------- font size ---------- */
 .font-xs {
-  font-size: 13px; }
+  font-size: 0.8125rem; }
 
 @media (min-width: 320px) {
   .font-s {
@@ -72,55 +66,55 @@ section {
 
 @media (min-width: 768px) {
   .font-s {
-    font-size: 14px; } }
+    font-size: 0.875rem; } }
 
 .font-l {
-  font-size: 24px; }
+  font-size: 1.5rem; }
 
 .font-xl {
-  font-size: 36px; }
+  font-size: 2rem; }
 
-/*:::::::::: header ::::::::::*/
-.header {
+/* ======================================================
+   Layout
+   ====================================================== */
+header {
+  margin-top: 1rem; }
+
+main {
+  margin-top: 5rem; }
+  @media screen and (min-width: 768px) {
+    main {
+      margin-top: 7rem; } }
+  @media screen and (min-width: 1200px) {
+    main {
+      margin-top: 9rem; } }
+
+section {
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 80vw; }
+
+/* header
+------------------------------------------------------ */
+.header__container {
   position: relative;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  margin-top: 30px;
-  padding: 30px 0; 
-  width: 100%;}
-  @media screen and (min-width: 768px) {
-    .header {
-      padding: 0; 
-      max-height: 230px;
-      height: 25vw;} }
+  margin: 0 auto;
+  max-width: 95%; }
+  @media screen and (min-width: 1200px) {
+    .header__container {
+      max-width: 1200px; } }
 
-.header__logo {
+.header__inner {
   position: absolute;
   right: 0;
   left: 0;
   text-align: center; }
-  .header__logo img {
-    max-width: 100%; }
-
-.header__shop-nav ul {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: end;
-          justify-content: flex-end; }
-
-.header__shop-nav li {
-  margin-left: 20px; }
-
-.header__shop-nav {
-  display: block; }
 
 .header__global-nav {
-  position: absolute;
-  right: 0;
-  bottom: 3rem;
-  left: 0;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -128,15 +122,45 @@ section {
   .header__global-nav li:not(:first-child) {
     margin-left: 10px; }
 
-@media screen and (max-width: 767px) {
-  .header__shop-nav {
-    display: none; } }
+.header__shop-nav {
+  display: block; }
+  .header__shop-nav ul {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: end;
+            justify-content: flex-end; }
+  .header__shop-nav li {
+    margin-left: 20px; }
 
-/* ---------- swiper ---------- */
-.swiper-container {
-  max-width: 1200px; }
+/* slider
+   ------------------------------------------------------ */
+.slider-container {
+  margin: 0 auto;
+  max-width: 1200px; 
+  width: 95%;}
 
-.swiper-slide img {
+.slider-frame {
+  position: relative;
+  width: 100%; }
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%; }
+
+.slider {
+  position: relative;
+  left: 0px;
+  display: -webkit-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.slider-item {
+  -webkit-box-flex: 0;
+          flex: 0 0 100%; }
+
+.slider-item img {
   width: 100%; }
 
 span.swiper-pagination-bullet {
@@ -150,8 +174,7 @@ span.swiper-pagination-bullet {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
-          justify-content: center;
-  margin: 4rem auto 0; }
+          justify-content: center; }
 
 .news__deck {
   display: -webkit-box;
@@ -199,7 +222,8 @@ span.swiper-pagination-bullet {
   display: inline-block;
   margin-left: 1rem; }
 
-/* ---------- about ---------- */
+/* About Section
+   ------------------------------------------------------ */
 .about {
   border-bottom: 2px solid rgba(128, 0, 128, 0.3); }
 
@@ -228,19 +252,21 @@ span.swiper-pagination-bullet {
     box-shadow: -1px -1px 5px gray, 1px 1px 5px gray; 
     opacity: 0.8;}
 
-/* ---------- section music ---------- */
+/* Music Section
+   ------------------------------------------------------ */
 .music__grid {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between; }
 
-.music__card {
+.music__grid .card {
   width: calc(33.33333% - 8px); }
-  .music__card img {
+  .music__grid .card img {
     width: 100%; }
 
-/* ---------- section foods ---------- */
+/* Foods and Drinks section
+   ------------------------------------------------------ */
 .foods__grid {
   display: -webkit-box;
   display: flex;
@@ -249,12 +275,13 @@ span.swiper-pagination-bullet {
           justify-content: space-between;
   width: 100%; }
 
-.foods__card {
+.foods__grid .card {
   width: calc(25% - 8px); }
-  .foods__card img {
+  .foods__grid .card img {
     width: 100%; }
 
-/* ---------- sights ---------- */
+/* Sights section
+   ------------------------------------------------------ */
 .sights {
   border-top: 2px solid rgba(128, 0, 128, 0.2); }
 
@@ -273,7 +300,8 @@ span.swiper-pagination-bullet {
     min-width: 200px; 
     width: 100%;}
 
-/*:::::::::: footer ::::::::::*/
+/* Footer
+   ------------------------------------------------------ */
 .footer {
   padding-bottom: 25px;
   text-align: center; }

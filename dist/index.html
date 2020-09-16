@@ -8,17 +8,23 @@
 
   <!-- styles -->
   <link rel="stylesheet" href="./css/ress.css" />
-  <link rel="stylesheet" href="./css/swiper.css" />
-  <link rel="stylesheet" href="./css/style.css?225" />
+  <link rel="stylesheet" href="./css/style.css?293" />
+
+  <!--
+    inview Animation用
+    Intersection Observer API の Polyfill(IE11対応用)
+  -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver" defer></script>
 
   <!-- inview Animation -->
   <link rel="stylesheet" href="./css/inview.css" />
-  <script src="./js/inview.js" defer></script>
+  <script type="module" src="./js/inview.js" defer></script>
 
   <!-- fonts -->
   <script src="https://kit.fontawesome.com/ea672cdcce.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&display=swap" rel="stylesheet" />
-  <script>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <!-- <script>
     (function (d) {
       var config = {
         kitId: "yah4liq",
@@ -48,19 +54,46 @@
       };
       s.parentNode.insertBefore(tk, s);
     })(document);
-  </script>
+  </script> -->
 
   <title>Top | OR-IKEDA sample</title>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="header font-xs">
-      <h1 class="header__logo">
-        <a href="#"><img src="./img/logo_shiic04.png" alt="Shiic Inc."/></a>
-        <span class="screen-reader-text">shiic</span>
-      </h1>
-      <p class="header__trade-name">Since 1969 in Hokkaido</p>
+  <header class="header font-xs">
+    <div class="header__container ">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="#">
+            <picture>
+              <source srcset="./img/logo/logo_sp@1x.png 1x, 
+                              ./img/logo/logo_sp@2x.png 2x" media="(max-width: 767px)">
+              <source srcset="./img/logo/logo_tab@1x.png 1x, 
+                              ./img/logo/logo_tab@2x.png 2x" media="(max-width: 1023px)">
+              <img src="./img/logo/logo_pc@1x.png" srcset="./img/logo/logo_pc@1x.png 1x, ./img/logo/logo_pc@2x.png 2x" alt="">
+            </picture>
+          </a>
+          <span class="screen-reader-text">shiic</span>
+        </h1>
+        <nav>
+          <ul class="header__global-nav" id="globalNav">
+            <li ontouchstart=""><a href="#about" class="font-black">About</a></li>
+            <li ontouchstart=""><a href="#music" class="font-black">Music</a></li>
+            <li ontouchstart=""><a href="#store" class="font-black">Store</a></li>
+            <li ontouchstart=""><a href="#sights" class="font-black">Sights</a></li>
+            <li ontouchstart=""><a href="#company" class="font-black">Company</a></li>
+            <li ontouchstart="" class="facebook only-desktop">
+              <a href="/"><i class="fab fa-facebook fa-lg"></i></a>
+            </li>
+            <li ontouchstart="" class="instagram">
+              <a href="/"><i class="fab fa-instagram fa-lg"></i></a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.global-nav -->
+      </div>
+      <!-- /.header__inner -->
+      <p class="header__established">Since 2019 in Hokkaido</p>
       <div class="header__shop-nav">
         <ul>
           <li><a href="#" target="_blank" class="font-black">Sign Up</a></li>
@@ -69,44 +102,37 @@
         </ul>
       </div>
       <!-- /.shop-nav -->
-      <ul class="header__global-nav" id="globalNav">
-        <li ontouchstart=""><a href="#about" class="font-black">About</a></li>
-        <li ontouchstart=""><a href="#music" class="font-black">Music</a></li>
-        <li ontouchstart=""><a href="#store" class="font-black">Store</a></li>
-        <li ontouchstart=""><a href="#sights" class="font-black">sights</a></li>
-        <li ontouchstart=""><a href="#company" class="font-black">Company</a></li>
-        <li ontouchstart="" class="facebook only-desktop">
-          <a href="/"><i class="fab fa-facebook fa-lg"></i></a>
-        </li>
-        <li ontouchstart="" class="instagram">
-          <a href="/"><i class="fab fa-instagram fa-lg"></i></a>
-        </li>
-      </ul>
-      <!-- /.global-nav -->
+
     </div>
     <!-- /.header -->
-  </div>
+  </header>
   <!-- /.wrapper -->
 
-  <main class="content">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="./img/sld1_accordion-691011_1920.jpg" alt="Swiper01" />
+  <main class="main">
+    <div class="slider-container">
+      <div class="slider-frame">
+        <div class="slider-wrapper">
+          <ul class="slider">
+            <li class="slider-item">
+              <img src="./img/sld1_accd.jpg" alt="Swiper01" />
+            </li>
+            <li class="slider-item">
+              <img src="./img/sld2_tp.jpg" alt="Swiper02" />
+            </li>
+            <li class="slider-item">
+              <img src="./img/sld3_g&b.jpg" alt="Swiper03" />
+            </li>
+          </ul>
+          <!-- /.slider -->
         </div>
-        <div class="swiper-slide">
-          <img src="./img/sld3_jessica-knowlden-nyBUfH9MkL4-unsplash.jpg" alt="Swiper02" />
-        </div>
-        <div class="swiper-slide">
-          <img src="./img/sld4_tim-bechervaise-RGZni84LIwY-unsplash.jpg" alt="Swiper03" />
-        </div>
+        <!-- /.swiper-wrapper -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
       </div>
-      <!-- /.swiper-wrapper -->
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev swiper-button-white"></div>
-      <div class="swiper-button-next swiper-button-white"></div>
+      <!-- /.slider-frame -->
     </div>
-    <!-- /.swiper-container -->
+    <!-- /.slider-container -->
 
     <section class="news inview" data-type="fadeIn">
       <div class="news__deck">
@@ -165,22 +191,26 @@
           </p>
       </div>
       <div class="music__grid">
-        <article class="music__card inview" data-type="fadeIn" data-delay="0">
+
+        <article class="card inview" data-type="fadeIn" data-delay="0">
           <h3 class="caption">ソン・モントゥーノ</h3>
           <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。</p>
           <img src="./img/m1_trumpeter.jpg" alt="cuban trumpeter" />
         </article>
-        <article class="music__card inview" data-type="fadeIn" data-delay="1">
+
+        <article class="card inview" data-type="fadeIn" data-delay="1">
           <h3 class="caption">ヌエバ・トローバ</h3>
           <p>智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。</p>
           <img src="./img/m2_piano.jpg" alt="cuban trumpeter" />
         </article>
-        <article class="music__card inview" data-type="fadeIn" data-delay="2">
+
+        <article class="card inview" data-type="fadeIn" data-delay="2">
           <h3 class="caption">ルンバ・グァグァンコー</h3>
           <p>或るとしの春、私は、生れてはじめて本州北端、津軽半島を凡そ三週間ほどかかつて一周したのであるが、それは、私の三十幾年の生涯に於いて、かなり重要な事件の一つであつた。</p>
           <img src="./img/m3_conga.jpg" alt="cuban trumpeter" />
         </article>
       </div>
+      <!-- /.music-grid -->
     </section>
     <!-- /section .music -->
 
@@ -192,19 +222,19 @@
         </p>
       </div>
       <div class="foods__grid">
-        <article class="foods__card inview" data-type="fadeIn" data-delay="0">
+        <article class="card inview" data-type="fadeIn" data-delay="0">
           <img src="./img/st01_cigar.jpg" alt="Cigar" />
           <p class="caption">Cigar</p>
         </article>
-        <article class="foods__card inview" data-type="fadeIn" data-delay="1">
+        <article class="card inview" data-type="fadeIn" data-delay="1">
           <img src="./img/st02_mojito.jpg" alt="Mojito" />
           <p class="caption">Mojito</p>
         </article>
-        <article class="foods__card inview" data-type="fadeIn" data-delay="2">
+        <article class="card inview" data-type="fadeIn" data-delay="2">
           <img src="./img/st03_papaya.jpg" alt="Papaya" />
           <p class="caption">Papaya</p>
         </article>
-        <article class="foods__card inview" data-type="fadeIn" data-delay="3">
+        <article class="card inview" data-type="fadeIn" data-delay="3">
           <img src="./img/st04_daiquiri.jpg" alt="" />
           <p class="caption">Fruit Daiquiri</p>
         </article>
@@ -287,28 +317,6 @@
       </p>
   </footer>
   <a href="#"><i class="fas fa-caret-square-up fa-2x return-to-top"></i></a>
-  <script src="./js/swiper.js"></script>
-  <script>
-    var swiper = new Swiper(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      loop: true,
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: true
-      },
-      speed: 500,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets"
-      }
-    });
-  </script>
-  <script>
-    new WOW().init();
-  </script>
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -31,7 +31,10 @@ function styles() {
 function scripts() {
   return src('./src/ts/*.ts')
     .pipe($.sourcemaps.init())
-    .pipe($.typescript())
+    .pipe($.typescript({
+      module: 'commonjs',
+      strict: true
+    }))
     .pipe($.sourcemaps.write('.'))
     .pipe(dest('./dist/js'));
 }

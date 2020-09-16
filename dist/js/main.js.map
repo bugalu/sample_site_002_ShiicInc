@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.ts"],"names":[],"mappings":"","file":"main.js","sourcesContent":[""]}
+{"version":3,"sources":["main.ts"],"names":[],"mappings":";AACA,IAAM,WAAW,GAAG,QAAQ,CAAC,gBAAgB,CAAC,cAAc,CAAC,CAAC;AAC9D,OAAO,CAAC,GAAG,CAAC,WAAW,CAAC,CAAC","file":"main.js","sourcesContent":["\nconst sliderItems = document.querySelectorAll('.slider-item');\nconsole.log(sliderItems);\n\n"]}
