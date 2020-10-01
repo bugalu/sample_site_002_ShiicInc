@@ -29,12 +29,9 @@ function styles() {
 }
 
 function scripts() {
-  return src('./src/ts/*.ts')
+  return src('./src/js/*.js')
     .pipe($.sourcemaps.init())
-    .pipe($.typescript({
-      module: 'commonjs',
-      strict: true
-    }))
+    .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe(dest('./dist/js'));
 }
@@ -49,13 +46,10 @@ function startAppServer() {
   watch('./src/**/*.ejs').on('change', server.reload);
   watch('./src/**/*.scss', styles);
   watch('./src/**/*.scss').on('change', server.reload);
-  // watch('./src/**/*.ts', lint);
-  watch('./src/**/*.ts', scripts);
-  watch('./src/**/*.ts').on('change', server.reload);
+  watch('./src/**/*.js', scripts);
+  watch('./src/**/*.js').on('change', server.reload);
 }
 
-
-// const serve = series(parallel(compile, styles, series(lint, scripts)), startAppServer);
 const serve = series(parallel(compile, styles, scripts), startAppServer);
 exports.compile = compile;
 exports.styles = styles;

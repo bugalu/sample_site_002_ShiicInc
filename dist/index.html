@@ -4,11 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-  <!-- styles -->
-  <link rel="stylesheet" href="./css/ress.css" />
-  <link rel="stylesheet" href="./css/style.css?293" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" />  -->
 
   <!--
     inview Animation用
@@ -24,43 +20,16 @@
   <script src="https://kit.fontawesome.com/ea672cdcce.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 
-  <!-- <script>
-    (function (d) {
-      var config = {
-        kitId: "yah4liq",
-        scriptTimeout: 3000,
-        async: true
-      },
-        h = d.documentElement,
-        t = setTimeout(function () {
-          h.className =
-            h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-        }, config.scriptTimeout),
-        tk = d.createElement("script"),
-        f = false,
-        s = d.getElementsByTagName("script")[0],
-        a;
-      h.className += " wf-loading";
-      tk.src = "https://use.typekit.net/" + config.kitId + ".js";
-      tk.async = true;
-      tk.onload = tk.onreadystatechange = function () {
-        a = this.readyState;
-        if (f || (a && a != "complete" && a != "loaded")) return;
-        f = true;
-        clearTimeout(t);
-        try {
-          Typekit.load(config);
-        } catch (e) { }
-      };
-      s.parentNode.insertBefore(tk, s);
-    })(document);
-  </script> -->
-
   <title>Top | OR-IKEDA sample</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="./css/ress.css" />
+  <link rel="stylesheet" href="./css/style.css?35" />
+
 </head>
 
 <body>
-  <header class="header font-xs">
+  <header class="l-header font-xs">
     <div class="header__container ">
       <div class="header__inner">
         <h1 class="header__logo">
@@ -108,34 +77,39 @@
   </header>
   <!-- /.wrapper -->
 
-  <main class="main">
+  <main class="l-main">
+    <!-- Slider main container -->
     <div class="slider-container">
-      <div class="slider-frame">
-        <div class="slider-wrapper">
-          <ul class="slider">
-            <li class="slider-item">
-              <img src="./img/sld1_accd.jpg" alt="Swiper01" />
-            </li>
-            <li class="slider-item">
-              <img src="./img/sld2_tp.jpg" alt="Swiper02" />
-            </li>
-            <li class="slider-item">
-              <img src="./img/sld3_g&b.jpg" alt="Swiper03" />
-            </li>
-          </ul>
-          <!-- /.slider -->
+      <div class="slider-frame" id="slider-frame">
+        <!-- Additional required wrapper -->
+        <div class="slider-wrapper" id="slider-wrapper">
+          <!-- Slides -->
+          <div class="slider-item order1" id="slider-item1"><img src="./img/sld1_accd.jpg" alt="アコーディオン" /></div>
+          <div class="slider-item order2" id="slider-item2"><img src="./img/sld2_tp.jpg" alt="トランペッター" /></div>
+          <div class="slider-item order3" id="slider-item3"><img src="./img/sld3_g&b.jpg" alt="ギタリストとベーシスト" /></div>
         </div>
-        <!-- /.swiper-wrapper -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev swiper-button-white"></div>
-        <div class="swiper-button-next swiper-button-white"></div>
+        <!-- ./slider-wrapper -->
+        <div class="sliderPause" id="sliderPause">
+          写真をクリックするとスライドを再開します
+        </div>
+        <!-- ./slider-pause -->
       </div>
-      <!-- /.slider-frame -->
+      <!-- ./slider-frame -->
+
+      <!-- If we need pagination -->
+      <div class="slider-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="slider-controls">
+        <button class="slider-button prev" id="prev">&Leftarrow;</button>
+        <button class="slider-button next" id="next">&Rightarrow;</button>
+      </div>
     </div>
     <!-- /.slider-container -->
 
-    <section class="news inview" data-type="fadeIn">
-      <div class="news__deck">
+    <!-- news -->
+    <section class="l-section news inview" data-type="fadeIn">
+      <div class="p-news__deck">
         <div class="news__head bg-gray">
           <h2 class="news__heading">News!</h2>
         </div>
@@ -165,7 +139,7 @@
     </section>
     <!-- /section .news -->
 
-    <section id="about" class="about">
+    <section id="about" class="l-section about">
       <div class="about__header inview" data-type="fadeIn">
         <h2>about Shiic Inc.</h2>
       </div>
@@ -182,8 +156,8 @@
     </section>
     <!-- / section .about -->
 
-    <!-- section .method -->
-    <section id="music" class="section music">
+    <!-- section .music -->
+    <section id="music" class="l-section music">
       <h2 class="inview" data-type="fadeIn">Music</h2>
       <div class="music__text inview" data-type="fadeIn">
         <p>
@@ -214,7 +188,7 @@
     </section>
     <!-- /section .music -->
 
-    <section id="foods" class="section foods">
+    <section id="foods" class="l-section foods">
       <h2 class=" inview" data-type="fadeIn">Foods & Drinks</h2>
       <div class="food__text inview" data-type="fadeIn">
         <p>
@@ -241,8 +215,9 @@
       </div>
     </section>
     <!-- / section .foods -->
+
     <!-- section .sights -->
-    <section id="sights" class="sights">
+    <section id="sights" class="l-section sights">
       <h2 class=" inview" data-type="fadeIn">Sights</h2>
       <div class="sights__text inview" data-type="fadeIn">
         <p>

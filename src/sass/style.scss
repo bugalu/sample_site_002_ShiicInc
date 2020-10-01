@@ -7,20 +7,13 @@ html {
 }
 body {
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  @media (min-width: 320px) {
-    font-size: calc(0.8125rem + ((1vw - 4.8px) * 1.0417));
-  }
-  @media (min-width: 768px) {
-    font-size: 16px;
-  }
-
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-  }
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 /* default style
    ------------------------------------------------------ */
@@ -62,11 +55,12 @@ h4 {
 /* ---------- font size ---------- */
 .font-xs {
   font-size: 0.8125rem;
+  @media (min-width: 768px) {
+    font-size: 0.875rem;
+  }
 }
 .font-s {
-  @media (min-width: 320px) {
-    font-size: calc(0.75rem + ((1vw - 4.8px) * 0.6944));
-  }
+  font-size: calc(0.75rem + ((1vw - 4.8px) * 0.6944));
   @media (min-width: 768px) {
     font-size: 0.875rem;
   }
@@ -81,11 +75,12 @@ h4 {
 /* ======================================================
    Layout
    ====================================================== */
-header {
+.l-header {
   margin-top: 1rem;
 }
-main {
-  margin-top: 5rem;
+.l-main {
+  max-width: 1080px;
+  margin: 5rem auto 0;
   @media screen and (min-width: 768px) {
     margin-top: 7rem;
   }
@@ -93,14 +88,22 @@ main {
     margin-top: 9rem;
   }
 }
-section {
-  max-width: 1080px;
-  margin: 0 auto;
-  width: 80vw;
+.l-section {
+  margin-top: 1rem;
+  @media screen and (min-width: 768px) {
+    margin-top: 4rem;
+  }
 }
 
-/* header
+/* ======================================================
+   Object
+   ====================================================== */
+
+/* Project
 ------------------------------------------------------ */
+/*** 
+header
+***/
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -108,7 +111,7 @@ section {
   margin: 0 auto;
   max-width: 95%;
   @media screen and (min-width: 1200px) {
-    max-width: 1200px;
+    max-width: 1080px;
   }
 }
 .header__inner {
@@ -136,66 +139,81 @@ section {
   }
 }
 
-/* slider
-   ------------------------------------------------------ */
+/**
+ * slider
+ */
 .slider-container {
-  margin: 0 auto;
-  width: 95%;
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .slider-frame {
   position: relative;
   width: 100%;
-  // @media screen and (min-width: 768px) {
-  //   max-width: 95%;
-  // }
-  // @media screen and (min-width: 1200px) {
-  //   max-width: 1200px;
-  // }
-}
-.slider-wrapper {
+  margin: 0 auto;
   overflow: hidden;
-  width: 100%;
-  // width: 100%;
-  // @media screen and (min-width: 768px) {
-  //   max-width: 95%;
-  // }
-  // @media screen and (min-width: 1200px) {
-  //   max-width: 1200px;
-  // }
-}
-.slider {
-  display: flex;
-  position: relative;
-  left: 0px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-.slider-item {
-  flex: 0 0 100%;
-}
-
-.slider-item img {
-  width: 100%;
-}
-
-span.swiper-pagination-bullet {
-  background: #fff;
-  opacity: 0.6;
-  &-active {
-    background: purple;
+  & .sliderPause {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    color: #fff;
+    user-select: none;
+    transition: opacity 0.5s;
   }
 }
-/* ---------- news ---------- */
-.news {
+.slider-wrapper {
   display: flex;
-  justify-content: center;
+  position: relative;
+  left: 0;
+  transform: translateX(0%);
+  transition: 1s;
 }
-.news__deck {
-  display: flex;
-  justify-content: center;
-  width: 900px;
+.slider-item {
+  position: relative;
+  flex: 1 0 100%;
+  margin-left: 0;
+  left: 0;
+  transition: 0s;
+  & .slider-text {
+    position: absolute;
+    left: 0;
+    font-size: 5vw;
+    padding: 0 2vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  & img {
+    width: 100%;
+  }
+}
+.slider-controls {
+  width: 100%;
+  margin-top: 1rem;
+  .next {
+    float: right;
+  }
+}
+/***
+News section
+***/
+.news__head {
+  padding: 0.25rem 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .news {
+    display: flex;
+    justify-content: center;
+  }
+  .p-news__deck {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
 }
 .news__head {
   align-items: stretch;
@@ -214,9 +232,8 @@ span.swiper-pagination-bullet {
   align-items: center;
   display: flex;
   flex: 1 1 0;
-  padding: 20px;
+  padding: 1rem;
   text-align: left;
-  width: 840px;
 }
 .news__content {
   display: flex;
@@ -228,8 +245,10 @@ span.swiper-pagination-bullet {
   display: inline-block;
   margin-left: 1rem;
 }
-/* About Section
-   ------------------------------------------------------ */
+
+/***
+About section
+***/
 .about {
   border-bottom: 2px solid rgba(purple, 0.3);
 }
@@ -254,8 +273,9 @@ span.swiper-pagination-bullet {
   }
 }
 
-/* Music Section
-   ------------------------------------------------------ */
+/*** 
+Music section
+***/
 .music__grid {
   display: flex;
   justify-content: space-between;
@@ -267,8 +287,9 @@ span.swiper-pagination-bullet {
   }
 }
 
-/* Foods and Drinks section
-   ------------------------------------------------------ */
+/***
+Foods and Drinks section
+***/
 .foods__grid {
   display: flex;
   flex-wrap: wrap;
@@ -282,8 +303,9 @@ span.swiper-pagination-bullet {
   }
 }
 
-/* Sights section
-   ------------------------------------------------------ */
+/*** 
+Sights section
+***/
 .sights {
   border-top: 2px solid rgba(purple, 0.2);
 }
@@ -302,8 +324,9 @@ span.swiper-pagination-bullet {
   }
 }
 
-/* Footer
-   ------------------------------------------------------ */
+/*** 
+Footer
+***/
 .footer {
   padding-bottom: 25px;
   text-align: center;
@@ -325,7 +348,9 @@ span.swiper-pagination-bullet {
     width: 20vw;
   }
 }
-/*:::::::::: / footer ::::::::::*/
+/*** 
+Return top
+***/
 .return-to-top {
   position: fixed;
   bottom: 30px;
@@ -334,8 +359,8 @@ span.swiper-pagination-bullet {
   color: gray;
   opacity: 0.6;
 }
-
-/* ---------- accessibility ---------- */
+/* Accessibility
+   ------------------------------------------------------ */
 .screen-reader-text {
   position: absolute;
   overflow: hidden;
