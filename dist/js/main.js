@@ -7,16 +7,16 @@
 /* ███ 各要素を取得 ███ */
 
 /* --- 個別slide本体() --- */
-var sliderItems = document.querySelectorAll('.slider-item');
+var sliderItems = document.querySelectorAll('.p-slider-item');
 /* --- slideItemを並べて動くパーツ --- */
 
-var sliderWrapper = document.getElementById('slider-wrapper');
+var sliderWrapper = document.getElementById('p-slider-wrapper');
 /* --- スライドのフレーム --- */
 
-var sliderFrame = document.getElementById('slider-frame');
+var sliderFrame = document.getElementById('p-slider-frame');
 /* ---------- スライドフレームの一時停止マーク ---------- */
 
-var sliderPause = document.getElementById('sliderPause');
+var sliderPause = document.getElementById('p-sliderPause');
 /* --- 操作ボタン --- */
 
 var prev = document.getElementById('prev');
@@ -45,12 +45,14 @@ var loop = true;
 
 /* prev（戻る）ボタンのクリックイベント */
 
-prev.addEventListener('click', function () {
+prev.addEventListener('click', function (event) {
+  event.stopPropagation();
   previousSlider();
 });
 /* next（進む）ボタンのクリックイベント */
 
-next.addEventListener('click', function () {
+next.addEventListener('click', function (event) {
+  event.stopPropagation();
   nextSlider();
 });
 /* ███ 再生モードによる動作分岐 ███ */
@@ -130,7 +132,7 @@ function previousSlider_drag() {
 
 
 function nextSlider_loop() {
-  var sliderItems = document.querySelectorAll('.slider-item');
+  var sliderItems = document.querySelectorAll('.p-slider-item');
   var clone = sliderItems[0].cloneNode(true);
   sliderWrapper.style.transition = "transform ".concat(transitionDuration, "ms");
   sliderWrapper.style.transform = 'translateX(-100%)';
@@ -145,8 +147,7 @@ function nextSlider_loop() {
 
 
 function previousSlider_loop() {
-  console.log('OWOWOWOW');
-  var sliderItems = document.querySelectorAll('.slider-item');
+  var sliderItems = document.querySelectorAll('.p-slider-item');
   var clone = sliderItems[sliderItems.length - 1].cloneNode(true);
   sliderWrapper.prepend(clone);
   sliderWrapper.style.transition = 'transform 0s';

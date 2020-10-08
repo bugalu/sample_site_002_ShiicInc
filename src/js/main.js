@@ -3,13 +3,13 @@
    ====================================================== */
 /* ███ 各要素を取得 ███ */
 /* --- 個別slide本体() --- */
-const sliderItems = document.querySelectorAll('.slider-item');
+const sliderItems = document.querySelectorAll('.p-slider-item');
 /* --- slideItemを並べて動くパーツ --- */
-const sliderWrapper = document.getElementById('slider-wrapper');
+const sliderWrapper = document.getElementById('p-slider-wrapper');
 /* --- スライドのフレーム --- */
-const sliderFrame = document.getElementById('slider-frame');
+const sliderFrame = document.getElementById('p-slider-frame');
 /* ---------- スライドフレームの一時停止マーク ---------- */
-const sliderPause = document.getElementById('sliderPause');
+const sliderPause = document.getElementById('p-sliderPause');
 /* --- 操作ボタン --- */
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
@@ -30,11 +30,13 @@ const loop = true;
 
 /* ███ ボタン ███ */
 /* prev（戻る）ボタンのクリックイベント */
-prev.addEventListener('click', () => {
+prev.addEventListener('click', (event) => {
+  event.stopPropagation();
   previousSlider();
 })
 /* next（進む）ボタンのクリックイベント */
-next.addEventListener('click', () => {
+next.addEventListener('click', (event) => {
+  event.stopPropagation();
   nextSlider();
 })
 
@@ -97,7 +99,7 @@ function previousSlider_drag() {
 /* ███ スライド動作(loopモード) ███ */
 /* 正順 */
 function nextSlider_loop() {
-  const sliderItems = document.querySelectorAll('.slider-item');
+  const sliderItems = document.querySelectorAll('.p-slider-item');
   const clone = sliderItems[0].cloneNode(true);
   sliderWrapper.style.transition = `transform ${transitionDuration}ms`;
   sliderWrapper.style.transform = 'translateX(-100%)';
@@ -106,12 +108,11 @@ function nextSlider_loop() {
     sliderWrapper.style.transform = 'translateX(0)';
     sliderWrapper.removeChild(sliderItems[0]);
     sliderWrapper.appendChild(clone);
-  }, `${transitionDuration}`)
+  }, `${transitionDuration}`);
 }
 /* 逆順 */
 function previousSlider_loop() {
-  console.log('OWOWOWOW');
-  const sliderItems = document.querySelectorAll('.slider-item');
+  const sliderItems = document.querySelectorAll('.p-slider-item');
   const clone = sliderItems[sliderItems.length - 1].cloneNode(true);
   sliderWrapper.prepend(clone);
   sliderWrapper.style.transition = 'transform 0s';

@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* variables
+   ------------------------------------------------------ */
 /* ======================================================
    Foundation
    ====================================================== */
@@ -6,7 +8,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif; }
+  color: #555555; 
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;}
 
 *,
 ::before,
@@ -40,7 +43,7 @@ h4 {
 
 /* ---------- font color ---------- */
 .font-black {
-  color: #000; }
+  color: #555; }
 
 .font-gray {
   color: darkgray; }
@@ -100,7 +103,7 @@ h4 {
 /*** 
 header
 ***/
-.header__container {
+.p-header__container {
   position: relative;
   display: -webkit-box;
   display: flex;
@@ -109,50 +112,55 @@ header
   margin: 0 auto;
   max-width: 95%; }
   @media screen and (min-width: 1200px) {
-    .header__container {
+    .p-header__container {
       max-width: 1080px; } }
 
-.header__inner {
+.p-header__inner {
   position: absolute;
   right: 0;
   left: 0;
   text-align: center; }
 
-.header__global-nav {
+.p-header__global-nav {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center; }
-  .header__global-nav li:not(:first-child) {
+  .p-header__global-nav li:not(:first-child) {
     margin-left: 10px; }
+  .p-header__global-nav a {
+    color: #555555; }
 
-.header__shop-nav {
+.p-header__shop-nav {
   display: block; }
-  .header__shop-nav ul {
+  .p-header__shop-nav ul {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: end;
             justify-content: flex-end; }
-  .header__shop-nav li {
+  .p-header__shop-nav li {
     margin-left: 20px; }
+  .p-header__shop-nav a {
+    color: #555555; }
 
 /**
  * slider
  */
-.slider-container {
+.p-slider-container {
   margin: 0 auto; 
   max-width: 1200px;
   width: 100%;}
 
-.slider-frame {
+.p-slider-frame {
   position: relative;
   overflow: hidden; 
   margin: 0 auto;
   width: 100%;}
-  .slider-frame .sliderPause {
+  .p-slider-frame .p-sliderPause {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 0.125rem 0.5rem;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     text-align: center;
@@ -167,7 +175,7 @@ header
         -ms-user-select: none;
             user-select: none;}
 
-.slider-wrapper {
+.p-slider-wrapper {
   position: relative;
   left: 0;
   display: -webkit-box;
@@ -177,7 +185,7 @@ header
   -webkit-transform: translateX(0%);
           transform: translateX(0%);}
 
-.slider-item {
+.p-slider-item {
   position: relative;
   left: 0;
   -webkit-box-flex: 1;
@@ -185,26 +193,32 @@ header
   margin-left: 0;
   -webkit-transition: 0s;
   transition: 0s; }
-  .slider-item .slider-text {
-    position: absolute;
-    left: 0;
-    padding: 0 2vw;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #fff; 
-    font-size: 5vw;}
-  .slider-item img {
+  .p-slider-item img {
     width: 100%; }
 
-.slider-controls {
+.p-slider-controls {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  left: 1%;
   margin-top: 1rem; 
-  width: 100%;}
-  .slider-controls .next {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);}
+  .p-slider-controls .next {
     float: right; }
+
+.p-slider-button {
+  z-index: 3; 
+  padding: 0.25rem 0.5rem;
+  outline: rgba(128, 0, 128, 0.1) solid 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;}
 
 /***
 News section
 ***/
-.news__head {
+.p-news__heading {
   padding: 0.25rem 0; }
 
 @media screen and (min-width: 1200px) {
@@ -220,7 +234,7 @@ News section
             justify-content: center;
     width: 80%; } }
 
-.news__head {
+.p-news__header {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: stretch;
@@ -230,14 +244,14 @@ News section
   -webkit-box-pack: center;
           justify-content: center; }
 
-.news__heading {
+.p-news__heading {
   align-self: center;
   color: #fff;
   letter-spacing: 2px; 
   font-weight: normal;
   font-size: 1rem;}
 
-.news__body {
+.p-news__body {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -247,24 +261,24 @@ News section
   padding: 1rem;
   text-align: left; }
 
-.news__content {
+.p-news__content {
   display: -webkit-box;
   display: flex; }
 
-.news__content + .news__content {
+.p-news__content + .p-news__content {
   margin-top: 0.5rem; }
 
-.news__content p {
+.p-news__content p {
   display: inline-block;
   margin-left: 1rem; }
 
 /***
 About section
 ***/
-.about {
+.p-about {
   border-bottom: 2px solid rgba(128, 0, 128, 0.3); }
 
-.about__button {
+.p-about__button {
   position: relative;
   display: -webkit-box;
   display: flex;
@@ -280,10 +294,10 @@ About section
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;}
-  .about__button:hover {
+  .p-about__button:hover {
     background: purple;
     color: white; }
-  .about__button:active {
+  .p-about__button:active {
     position: relative;
     top: 1px;
     box-shadow: -1px -1px 5px gray, 1px 1px 5px gray; 
@@ -292,21 +306,21 @@ About section
 /*** 
 Music section
 ***/
-.music__grid {
+.p-music__grid {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between; }
 
-.music__grid .card {
+.p-music__grid .card {
   width: calc(33.33333% - 8px); }
-  .music__grid .card img {
+  .p-music__grid .card img {
     width: 100%; }
 
 /***
 Foods and Drinks section
 ***/
-.foods__grid {
+.p-foods__grid {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -314,18 +328,18 @@ Foods and Drinks section
           justify-content: space-between;
   width: 100%; }
 
-.foods__grid .card {
+.p-foods__grid .card {
   width: calc(25% - 8px); }
-  .foods__grid .card img {
+  .p-foods__grid .card img {
     width: 100%; }
 
 /*** 
 Sights section
 ***/
-.sights {
+.p-sights {
   border-top: 2px solid rgba(128, 0, 128, 0.2); }
 
-.sights__grid {
+.p-sights__grid {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -333,20 +347,20 @@ Sights section
           justify-content: space-between;
   width: 100%; }
 
-.sights__card {
+.p-sights__card {
   margin-bottom: 10px;
   width: calc(20% - 8px); }
-  .sights__card img {
+  .p-sights__card img {
     min-width: 200px; 
     width: 100%;}
 
 /*** 
-Footer
+footer
 ***/
-.footer {
+.p-footer {
   padding-bottom: 25px;
   text-align: center; }
-  .footer__nav {
+  .p-footer__nav {
     display: -webkit-box;
     display: flex;
     justify-content: space-around;
@@ -354,10 +368,10 @@ Footer
     padding-top: 25px;
     max-width: 720px;
     width: 80vw; }
-  .footer a {
+  .p-footer a {
     color: white;
     text-decoration: none; }
-  .footer__logo {
+  .p-footer__logo {
     margin: 30px auto 30px;
     max-width: 120px;
     width: 20vw; }

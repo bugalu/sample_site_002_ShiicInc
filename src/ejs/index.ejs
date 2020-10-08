@@ -14,6 +14,8 @@ let randNum = Math.floor(Math.random()*1000);
     Intersection Observer API の Polyfill(IE11対応用)
   -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver" defer></script>
+  <!-- .prepend()のPolyfill(IE11対応用) -->
+  <script src="js/ie11_prepend.js" defer></script>
 
   <!-- inview Animation -->
   <link rel="stylesheet" href="./css/inview.css" />
@@ -33,9 +35,9 @@ let randNum = Math.floor(Math.random()*1000);
 
 <body>
   <header class="l-header font-xs">
-    <div class="header__container ">
-      <div class="header__inner">
-        <h1 class="header__logo">
+    <div class="p-header__container">
+      <div class="p-header__inner">
+        <h1 class="p-header__logo">
           <a href="#">
             <picture>
               <source srcset="./img/logo/logo_sp@1x.png 1x, 
@@ -48,12 +50,12 @@ let randNum = Math.floor(Math.random()*1000);
           <span class="screen-reader-text">shiic</span>
         </h1>
         <nav>
-          <ul class="header__global-nav" id="globalNav">
-            <li ontouchstart=""><a href="#about" class="font-black">About</a></li>
-            <li ontouchstart=""><a href="#music" class="font-black">Music</a></li>
-            <li ontouchstart=""><a href="#store" class="font-black">Store</a></li>
-            <li ontouchstart=""><a href="#sights" class="font-black">Sights</a></li>
-            <li ontouchstart=""><a href="#company" class="font-black">Company</a></li>
+          <ul class="p-header__global-nav font-black" id="globalNav">
+            <li ontouchstart=""><a href="#p-about">About</a></li>
+            <li ontouchstart=""><a href="#music">Music</a></li>
+            <li ontouchstart=""><a href="#store">Store</a></li>
+            <li ontouchstart=""><a href="#p-sights">Sights</a></li>
+            <li ontouchstart=""><a href="#company">Company</a></li>
             <li ontouchstart="" class="facebook only-desktop">
               <a href="/"><i class="fab fa-facebook fa-lg"></i></a>
             </li>
@@ -64,13 +66,13 @@ let randNum = Math.floor(Math.random()*1000);
         </nav>
         <!-- /.global-nav -->
       </div>
-      <!-- /.header__inner -->
+      <!-- /.p-header__inner -->
       <p class="header__established">Since 2019 in Hokkaido</p>
-      <div class="header__shop-nav">
-        <ul>
-          <li><a href="#" target="_blank" class="font-black">Sign Up</a></li>
-          <li><a href="#" target="_blank" class="font-black"><span>Sign In</span></a></li>
-          <li><a href="#" target="_blank" class="font-black"><span>Cart</span></a></li>
+      <div class="p-header__shop-nav">
+        <ul class="font-black">
+          <li><a href="#" target="_blank">Sign Up</a></li>
+          <li><a href="#" target="_blank"><span>Sign In</span></a></li>
+          <li><a href="#" target="_blank"><span>Cart</span></a></li>
         </ul>
       </div>
       <!-- /.shop-nav -->
@@ -82,53 +84,53 @@ let randNum = Math.floor(Math.random()*1000);
 
   <main class="l-main">
     <!-- Slider main container -->
-    <div class="slider-container">
-      <div class="slider-frame" id="slider-frame">
+    <div class="p-slider-container">
+      <div class="p-slider-frame" id="p-slider-frame">
         <!-- Additional required wrapper -->
-        <div class="slider-wrapper" id="slider-wrapper">
+        <div class="p-slider-wrapper" id="p-slider-wrapper">
           <!-- Slides -->
-          <div class="slider-item order1" id="slider-item1"><img src="./img/sld1_accd.jpg" alt="アコーディオン" /></div>
-          <div class="slider-item order2" id="slider-item2"><img src="./img/sld2_tp.jpg" alt="トランペッター" /></div>
-          <div class="slider-item order3" id="slider-item3"><img src="./img/sld3_g&b.jpg" alt="ギタリストとベーシスト" /></div>
+          <div class="p-slider-item order1" id="p-slider-item1"><img src="./img/sld1_accd.jpg" alt="アコーディオン" /></div>
+          <div class="p-slider-item order2" id="p-slider-item2"><img src="./img/sld2_tp.jpg" alt="トランペッター" /></div>
+          <div class="p-slider-item order3" id="p-slider-item3"><img src="./img/sld3_g&b.jpg" alt="ギタリストとベーシスト" /></div>
         </div>
-        <!-- ./slider-wrapper -->
-        <div class="sliderPause" id="sliderPause">
+        <!-- ./p-slider-wrapper -->
+        <div class="p-sliderPause" id="p-sliderPause">
           写真をクリックするとスライドを再開します
         </div>
         <!-- ./slider-pause -->
+        <!-- If we need navigation buttons -->
+        <div class="p-slider-controls">
+          <button class="slider-button prev" id="prev">&Leftarrow;</button>
+          <button class="slider-button next" id="next">&Rightarrow;</button>
+        </div>
+        <!-- /. p-slider-controls -->
       </div>
-      <!-- ./slider-frame -->
+      <!-- ./p-slider-frame -->
 
       <!-- If we need pagination -->
-      <div class="slider-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="slider-controls">
-        <button class="slider-button prev" id="prev">&Leftarrow;</button>
-        <button class="slider-button next" id="next">&Rightarrow;</button>
-      </div>
+      <!-- <div class="slider-pagination"></div> -->
     </div>
-    <!-- /.slider-container -->
+    <!-- /.p-slider-container -->
 
     <!-- news -->
     <section class="l-section news inview" data-type="fadeIn">
       <div class="p-news__deck">
-        <div class="news__head bg-gray">
-          <h2 class="news__heading">News!</h2>
+        <div class="p-news__header bg-gray">
+          <h2 class="p-news__heading">News!</h2>
         </div>
-        <div class="news__body bg-smoke">
+        <div class="p-news__body bg-smoke">
           <ul>
-            <li class="news__content font-s">
+            <li class="p-news__content font-s">
               <time datetime="2019-07-14">2019/07/14</time>
               <p>親譲りの無鉄砲で小供の時から損ばかりしている。</p>
             </li>
-            <li class="news__content font-s">
+            <li class="p-news__content font-s">
               <time datetime="2019-07-10">2019/07/10</time>
               <p>
                   メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。
                 </p>
             </li>
-            <li class="news__content font-s">
+            <li class="p-news__content font-s">
               <time datetime="2019-07-04">2019/07/04</time>
               <p>
                   ゴーシュは町の活動写真館でセロを弾く係りでした。けれどもあんまり上手でないという評判でした。
@@ -136,28 +138,26 @@ let randNum = Math.floor(Math.random()*1000);
             </li>
           </ul>
         </div>
-        <!-- / news__body -->
+        <!-- / p-news__body -->
       </div>
       <!-- /.news__deck -->
     </section>
     <!-- /section .news -->
 
-    <section id="about" class="l-section about">
-      <div class="about__header inview" data-type="fadeIn">
+    <section id="p-about" class="l-section p-about">
+      <div class="p-about__header inview" data-type="fadeIn">
         <h2>about Shiic Inc.</h2>
       </div>
-      <div class="about__text inview" data-type="fadeIn">
-        <p>
-            ある日の暮方の事である。一人の下人が、羅生門の下で雨やみを待っていた。広い門の下には、この男のほかに誰もいない。ただ、所々丹塗の剥げた、大きな円柱に、蟋蟀が一匹とまっている。羅生門が、朱雀大路にある以上は、この男のほかにも、雨やみをする市女笠や揉烏帽子が、もう二三人はありそうなものである。それが、この男のほかには誰もいない。何故かと云うと、この二三年、京都には、地震とか辻風とか火事とか饑饉とか云う災がつづいて起った。そこで洛中のさびれ方は一通りではない。旧記によると、仏像や仏具を打砕いて、その丹がついたり、金銀の箔がついたりした木を、路ばたにつみ重ねて、薪の料に売っていたと云う事である。
-          </p>
+      <div class="p-about__text inview" data-type="fadeIn">
+        <p>このサイトは、Web制作フリーランスのORイケダによる制作サンプルサイトです。</p>
       </div>
-      <div class="about__button about__button-roll font-purple inview" data-type="fadeIn">
+      <div class="p-about__button p-about__button-roll font-purple inview" data-type="fadeIn">
         <div class="btn">
           <span class="font-xs">&gt;&gt;</span> History of Shiic
         </div>
       </div>
     </section>
-    <!-- / section .about -->
+    <!-- / section .p-about -->
 
     <!-- section .music -->
     <section id="music" class="l-section music">
@@ -167,7 +167,7 @@ let randNum = Math.floor(Math.random()*1000);
             堀川の大殿様のやうな方は、これまでは固より、後の世には恐らく二人とはいらつしやいますまい。噂に聞きますと、あの方の御誕生になる前には、大威徳明王の御姿が御母君の夢枕にお立ちになつたとか申す事でございますが、兎に角御生れつきから、並々の人間とは御違ひになつてゐたやうでございます。でございますから、あの方の為さいました事には、一つとして私どもの意表に出てゐないものはございません。
           </p>
       </div>
-      <div class="music__grid">
+      <div class="p-music__grid">
 
         <article class="card inview" data-type="fadeIn" data-delay="0">
           <h3 class="caption">ソン・モントゥーノ</h3>
@@ -198,7 +198,7 @@ let randNum = Math.floor(Math.random()*1000);
           木曾路はすべて山の中である。あるところは岨づたいに行く崖の道であり、あるところは数十間の深さに臨む木曾川の岸であり、あるところは山の尾をめぐる谷の入り口である。一筋の街道はこの深い森林地帯を貫いていた。東ざかいの桜沢から、西の十曲峠まで、木曾十一宿はこの街道に添うて、二十二里余にわたる長い谿谷の間に散在していた。
         </p>
       </div>
-      <div class="foods__grid">
+      <div class="p-foods__grid">
         <article class="card inview" data-type="fadeIn" data-delay="0">
           <img src="./img/st01_cigar.jpg" alt="Cigar" />
           <p class="caption">Cigar</p>
@@ -219,71 +219,71 @@ let randNum = Math.floor(Math.random()*1000);
     </section>
     <!-- / section .foods -->
 
-    <!-- section .sights -->
-    <section id="sights" class="l-section sights">
+    <!-- section .p-sights -->
+    <section id="p-sights" class="l-section p-sights">
       <h2 class=" inview" data-type="fadeIn">Sights</h2>
-      <div class="sights__text inview" data-type="fadeIn">
+      <div class="p-sights__text inview" data-type="fadeIn">
         <p>
               蕗屋清一郎が、何故これから記す様な恐ろしい悪事を思立ったか、その動機については詳しいことは分らぬ。又仮令分ったとしてもこのお話には大して関係がないのだ。彼がなかば苦学見たいなことをして、ある大学に通っていた所を見ると、学資の必要に迫られたのかとも考えられる。彼は稀に見る秀才で、而も非常な勉強家だったから、学資を得る為に、つまらぬ内職に時を取られて、好きな読書や思索が十分出来ないのを残念に思っていたのは確かだ。
             </p>
       </div>
-      <div class="sights__grid">
-        <div class="sights__card inview" data-type="fadeIn" data-delay="0">
+      <div class="p-sights__grid">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="0">
           <img src="./img/d01_vieja.jpg" alt="" />
           <p class="caption">La Habana Vieja</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="1">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="1">
           <img src="./img/d02_fruit.jpg" alt="" />
           <p class="caption">Habana</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="2">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="2">
           <img src="./img/d03_malecon.jpg" alt="" />
           <p class="caption">Malecón</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="3">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="3">
           <img src="./img/d04_capitolio.jpg" alt="" />
           <p class="caption">El Capitolio</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="4">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="4">
           <img src="./img/d05_old-habana.jpg" alt="" />
           <p class="caption">Old Habana</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="5">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="5">
           <img src="./img/d06_morro.jpg" alt="" />
           <p class="caption">Castillo del Morro</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="6">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="6">
           <img src="./img/d07_gran-teatro.jpg" alt="" />
           <p class="caption">Gran Teatro de La Habana</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="7">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="7">
           <img src="./img/d08_terrazas.jpg" alt="" />
           <p class="caption">Las Terrazas</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="8">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="8">
           <img src="./img/d09_plaza.jpg" alt="" />
           <p class="caption">Plaza de la Revolucion</p>
         </div>
-        <div class="sights__card inview" data-type="fadeIn" data-delay="9">
+        <div class="p-sights__card inview" data-type="fadeIn" data-delay="9">
           <img src="./img/d10_varadero.jpg" alt="" />
           <p class="caption">Varadero</p>
         </div>
       </div>
     </section>
-    <!-- / section .sights -->
+    <!-- / section .p-sights -->
   </main>
   <!-- /.content -->
 
-  <footer id="company" class="footer bg-purple font-white font-s">
-    <ul class="footer__nav">
+  <footer id="company" class="p-footer bg-purple font-white font-s">
+    <ul class="p-footer__nav">
       <li><a href="">Payment</a></li>
       <li><a href="">Delivery</a></li>
       <li><a href="">Privacy Policy</a></li>
       <li><a href="">Legal Notation</a></li>
       <li><a href="">Contact</a></li>
     </ul>
-    <a href="/"><img src="./img/logo_shiic04_white.png" alt="Shiic Inc." class="footer__logo" /></a>
-    <div class="footer__info font-xs">
+    <a href="/"><img src="./img/logo_shiic04_white.png" alt="Shiic Inc." class="p-footer__logo" /></a>
+    <div class="p-footer__info font-xs">
       <address>
         Ｘ県Ｙ市Ｚ区Ａ町0番0号（<a href="https://goo.gl/maps/*******" target="_blank">Map</a>）
       </address>

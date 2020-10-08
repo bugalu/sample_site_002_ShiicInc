@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* variables
+   ------------------------------------------------------ */
+$font-bk: #555555;
+
 /* ======================================================
    Foundation
    ====================================================== */
@@ -7,6 +11,7 @@ html {
 }
 body {
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: $font-bk;
 }
 *,
 ::before,
@@ -41,7 +46,7 @@ h4 {
 }
 /* ---------- font color ---------- */
 .font-black {
-  color: #000;
+  color: #555;
 }
 .font-gray {
   color: darkgray;
@@ -104,7 +109,7 @@ h4 {
 /*** 
 header
 ***/
-.header__container {
+.p-header__container {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -114,21 +119,24 @@ header
     max-width: 1080px;
   }
 }
-.header__inner {
+.p-header__inner {
   position: absolute;
   left: 0;
   right: 0;
   text-align: center;
 }
-.header__global-nav {
+.p-header__global-nav {
   display: flex;
   justify-content: center;
-  & li:not(:first-child) {
+  li:not(:first-child) {
     margin-left: 10px;
+  }
+  a {
+    color: $font-bk;
   }
 }
 
-.header__shop-nav {
+.p-header__shop-nav {
   display: block;
   ul {
     display: flex;
@@ -137,25 +145,29 @@ header
   li {
     margin-left: 20px;
   }
+  a {
+    color: $font-bk;
+  }
 }
 
 /**
  * slider
  */
-.slider-container {
+.p-slider-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-.slider-frame {
+.p-slider-frame {
   position: relative;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  & .sliderPause {
+  & .p-sliderPause {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 0.125rem 0.5rem;
     transform: translate(-50%, -50%);
     opacity: 0;
     text-align: center;
@@ -165,42 +177,54 @@ header
     transition: opacity 0.5s;
   }
 }
-.slider-wrapper {
+.p-slider-wrapper {
   display: flex;
   position: relative;
   left: 0;
   transform: translateX(0%);
   transition: 1s;
 }
-.slider-item {
+.p-slider-item {
   position: relative;
   flex: 1 0 100%;
   margin-left: 0;
   left: 0;
   transition: 0s;
-  & .slider-text {
-    position: absolute;
-    left: 0;
-    font-size: 5vw;
-    padding: 0 2vw;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #fff;
-  }
+  // & .p-slider-text {
+  //   position: absolute;
+  //   left: 0;
+  //   font-size: 5vw;
+  //   padding: 0 2vw;
+  //   background-color: rgba(0, 0, 0, 0.2);
+  //   color: #fff;
+  // }
   & img {
     width: 100%;
   }
 }
-.slider-controls {
-  width: 100%;
+.p-slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  right: 1%;
+  transform: translateY(-50%);
   margin-top: 1rem;
   .next {
     float: right;
   }
 }
+.p-slider-button {
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  padding: 0.25rem 0.5rem;
+  outline: rgba($color: #800080, $alpha: 0.1) solid 3px;
+  color: rgba($color: #fff, $alpha: 0.8);
+  font-size: 1.5rem;
+  z-index: 3;
+}
 /***
 News section
 ***/
-.news__head {
+.p-news__heading {
   padding: 0.25rem 0;
 }
 
@@ -215,33 +239,33 @@ News section
     width: 80%;
   }
 }
-.news__head {
+.p-news__header {
   align-items: stretch;
   display: flex;
   flex: 0 0 20%;
   justify-content: center;
 }
-.news__heading {
+.p-news__heading {
   align-self: center;
   color: #fff;
   font-size: 1rem;
   font-weight: normal;
   letter-spacing: 2px;
 }
-.news__body {
+.p-news__body {
   align-items: center;
   display: flex;
   flex: 1 1 0;
   padding: 1rem;
   text-align: left;
 }
-.news__content {
+.p-news__content {
   display: flex;
 }
-.news__content + .news__content {
+.p-news__content + .p-news__content {
   margin-top: 0.5rem;
 }
-.news__content p {
+.p-news__content p {
   display: inline-block;
   margin-left: 1rem;
 }
@@ -249,10 +273,10 @@ News section
 /***
 About section
 ***/
-.about {
+.p-about {
   border-bottom: 2px solid rgba(purple, 0.3);
 }
-.about__button {
+.p-about__button {
   border: 1px solid purple;
   cursor: pointer;
   display: flex;
@@ -276,11 +300,11 @@ About section
 /*** 
 Music section
 ***/
-.music__grid {
+.p-music__grid {
   display: flex;
   justify-content: space-between;
 }
-.music__grid .card {
+.p-music__grid .card {
   width: calc(33.33333% - 8px);
   img {
     width: 100%;
@@ -290,13 +314,13 @@ Music section
 /***
 Foods and Drinks section
 ***/
-.foods__grid {
+.p-foods__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
-.foods__grid .card {
+.p-foods__grid .card {
   width: calc(25% - 8px);
   img {
     width: 100%;
@@ -306,16 +330,16 @@ Foods and Drinks section
 /*** 
 Sights section
 ***/
-.sights {
+.p-sights {
   border-top: 2px solid rgba(purple, 0.2);
 }
-.sights__grid {
+.p-sights__grid {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 }
-.sights__card {
+.p-sights__card {
   margin-bottom: 10px;
   width: calc(20% - 8px);
   img {
@@ -325,9 +349,9 @@ Sights section
 }
 
 /*** 
-Footer
+footer
 ***/
-.footer {
+.p-footer {
   padding-bottom: 25px;
   text-align: center;
   &__nav {
