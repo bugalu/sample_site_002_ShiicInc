@@ -1,7 +1,19 @@
 @charset "UTF-8";
+
+/* responsive font size
+   ------------------------------------------------------ */
+@import "../../node_modules/rfs/scss";
+$rfs-base-value: 1rem;
+
 /* variables
    ------------------------------------------------------ */
 $font-bk: #555555;
+/* ---
+可変フォントサイズ用の変数
+768〜1024px幅においてフォントサイズを変化させる
+--- */
+$variable-start: 768;
+$variable-end: 1024;
 
 /* ======================================================
    Foundation
@@ -58,23 +70,70 @@ h4 {
   color: white;
 }
 /* ---------- font size ---------- */
+p:not([class]),
+li:not([class]) {
+  $min-rem-p: 0.875;
+  $max-rem-p: 1;
+  //〜767px
+  font-size: $min-rem-p + rem;
+  //768px〜
+  @media screen and (min-width: 768px) {
+    font-size: calc(
+      (#{$max-rem-p - $min-rem-p} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) + #{$min-rem-p +
+        rem}
+    );
+  }
+  //1024px〜
+  @media screen and (min-width: 1024px) {
+    //最大値適用の画面幅の下限
+    font-size: $max-rem-p + rem; //最大値
+  }
+}
+
 .font-xs {
-  font-size: 0.8125rem;
-  @media (min-width: 768px) {
-    font-size: 0.875rem;
+  $min-rem-xs: 0.75;
+  $max-rem-xs: 0.875;
+  //〜767px
+  font-size: $min-rem-xs + rem;
+  //768px〜
+  @media screen and (min-width: 768px) {
+    font-size: calc(
+      (#{$max-rem-xs - $min-rem-xs} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) +
+        #{$min-rem-xs + rem}
+    );
+  }
+  //1024px〜
+  @media screen and (min-width: 1024px) {
+    //最大値適用の画面幅の下限
+    font-size: $max-rem-xs + rem; //最大値
   }
 }
+
 .font-s {
-  font-size: calc(0.75rem + ((1vw - 4.8px) * 0.6944));
-  @media (min-width: 768px) {
-    font-size: 0.875rem;
+  $min-rem-s: 0.75;
+  $max-rem-s: 0.9375;
+  //〜767px
+  font-size: $min-rem-s + rem;
+  //768px〜
+  @media screen and (min-width: 768px) {
+    font-size: calc(
+      (#{$max-rem-s - $min-rem-s} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) + #{$min-rem-s +
+        rem}
+    );
+  }
+  //1024px〜
+  @media screen and (min-width: 1024px) {
+    //最大値適用の画面幅の下限
+    font-size: $max-rem-s + rem; //最大値
   }
 }
+
 .font-l {
-  font-size: 1.5rem;
+  @include font-size(1.5rem);
 }
+
 .font-xl {
-  font-size: 2rem;
+  @include font-size(2rem);
 }
 
 /* ======================================================
@@ -129,7 +188,7 @@ header
   display: flex;
   justify-content: center;
   li:not(:first-child) {
-    margin-left: 10px;
+    margin-left: 1.5rem;
   }
   a {
     color: $font-bk;
@@ -221,6 +280,13 @@ header
   font-size: 1.5rem;
   z-index: 3;
 }
+/*** 
+section共通
+***/
+.p-section__heading {
+  margin: 1rem 0;
+}
+
 /***
 News section
 ***/
@@ -273,18 +339,29 @@ News section
 /***
 About section
 ***/
-.p-about {
-  border-bottom: 2px solid rgba(purple, 0.3);
+
+.p-about__list {
+  margin: 1rem 0 1rem 0.75rem;
 }
+.p-about__list li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.p-about a {
+  text-decoration: underline;
+}
+
 .p-about__button {
-  border: 1px solid purple;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   position: relative;
+  margin: 1rem auto;
+  padding: 0.25rem 1rem;
+  border: 1px solid purple;
+  cursor: pointer;
   transition: 0.4s;
   user-select: none;
-  width: 200px;
   &:hover {
     background: purple;
     color: white;
@@ -303,12 +380,23 @@ Music section
 .p-music__grid {
   display: flex;
   justify-content: space-between;
+  margin-top: 1.5rem;
 }
-.p-music__grid .card {
-  width: calc(33.33333% - 8px);
+.p-music__card {
+  width: calc(33.33333% - 16px);
+  padding: 1rem 1.5rem;
+  box-shadow: -2px 2px 4px 0px #ddd;
   img {
     width: 100%;
   }
+}
+.p-music__card-heading {
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 500;
+}
+
+.p-music__text {
+  margin-top: 0.5rem;
 }
 
 /***
@@ -327,12 +415,9 @@ Foods and Drinks section
   }
 }
 
-/*** 
+/***
 Sights section
 ***/
-.p-sights {
-  border-top: 2px solid rgba(purple, 0.2);
-}
 .p-sights__grid {
   display: flex;
   justify-content: space-between;
