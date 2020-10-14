@@ -128,6 +128,9 @@ li:not([class]),
     .l-section {
       margin-top: 4rem; } }
 
+.l-footer {
+  margin-top: 4rem; }
+
 /* ======================================================
    Object
    ====================================================== */
@@ -384,7 +387,8 @@ Foods and Drinks section
   flex-wrap: wrap;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  width: 100%; }
+  margin-top: 1.5rem; 
+  width: 100%;}
 
 .p-foods__grid .card {
   width: calc(25% - 8px); }
@@ -400,7 +404,8 @@ Sights section
   flex-wrap: wrap;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  width: 100%; }
+  margin-top: 1.5rem; 
+  width: 100%;}
 
 .p-sights__card {
   margin-bottom: 10px;

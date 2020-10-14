@@ -159,6 +159,9 @@ li:not([class]),
     margin-top: 4rem;
   }
 }
+.l-footer {
+  margin-top: 4rem;
+}
 
 /* ======================================================
    Object
@@ -410,6 +413,7 @@ Foods and Drinks section
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  margin-top: 1.5rem;
 }
 .p-foods__grid .card {
   width: calc(25% - 8px);
@@ -426,6 +430,7 @@ Sights section
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 1.5rem;
 }
 .p-sights__card {
   margin-bottom: 10px;
