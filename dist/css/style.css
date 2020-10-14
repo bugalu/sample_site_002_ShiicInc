@@ -62,15 +62,18 @@ h4 {
 
 /* ---------- font size ---------- */
 p:not([class]),
-li:not([class]) {
+li:not([class]),
+.font-m {
   font-size: 0.875rem; }
   @media screen and (min-width: 768px) {
     p:not([class]),
-    li:not([class]) {
+    li:not([class]),
+    .font-m {
       font-size: calc( (0.125 * 16) * ((100vw - 768px) / (256)) + 0.875rem); } }
   @media screen and (min-width: 1024px) {
     p:not([class]),
-    li:not([class]) {
+    li:not([class]),
+    .font-m {
       font-size: 1rem; } }
 
 .font-xs {
@@ -327,25 +330,26 @@ About section
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  margin: 1rem auto;
-  padding: 0.25rem 1rem;
-  border: 1px solid purple;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  margin: 1rem 0; }
+  .p-about__button .btn {
+    padding: 0.25rem 1rem;
+    border: 1px solid purple;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
-  .p-about__button:hover {
-    background: purple;
-    color: white; }
-  .p-about__button:active {
-    position: relative;
-    top: 1px;
-    box-shadow: -1px -1px 5px gray, 1px 1px 5px gray; 
-    opacity: 0.8;}
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .p-about__button .btn:hover {
+      background: purple;
+      color: white; }
+    .p-about__button .btn:active {
+      position: relative;
+      top: 1px;
+      box-shadow: -1px -1px 5px gray, 1px 1px 5px gray; 
+      opacity: 0.8;}
 
 /*** 
 Music section
