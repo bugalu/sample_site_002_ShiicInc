@@ -145,14 +145,6 @@ li:not([class]),
 .l-header {
   margin-top: 1rem;
 }
-.l-header__site-name {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  text-align: center;
-}
 .l-header__established {
   position: absolute;
   left: 0;
@@ -160,26 +152,72 @@ li:not([class]),
   bottom: 0;
   text-align: center;
 }
+.l-header__global-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  height: 70%;
+  transform: translateX(150%);
+  transition: transform 1s;
+  &.isOpen {
+    transform: translateX(0);
+  }
+}
+.l-header__shop-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  height: 30%;
+  transform: translateX(-150%);
+  transition: transform 1s;
+  &.isOpen {
+    transform: translateX(0);
+  }
+}
 .l-main {
   max-width: 1080px;
   margin: 1rem auto 0;
-  @media screen and (min-width: 768px) {
-    margin-top: 7rem;
-  }
-  @media screen and (min-width: 1024px) {
-    margin-top: 9rem;
-  }
 }
 .l-section {
   margin: 1rem auto 0;
   max-width: 1080px;
   width: 95%;
-  @media screen and (min-width: 768px) {
-    margin-top: 4rem;
-  }
 }
 .l-footer {
   margin-top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .l-header__established {
+    display: inline-block;
+    left: 0;
+  }
+  .l-header__global-nav {
+    position: absolute;
+    top: 100%;
+    transform: translateX(0);
+  }
+  .l-header__shop-nav {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    margin-left: auto;
+    transform: translateX(0);
+  }
+  .l-main {
+    margin-top: 3rem;
+  }
+  .l-section {
+    margin-top: 3rem;
+  }
 }
 
 /* ======================================================
@@ -192,31 +230,29 @@ li:not([class]),
 header
 ***/
 .p-header__container {
-  display: flex;
+  display: block;
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
   max-width: 95%;
   height: 6rem;
 }
-.p-header__global-nav {
+.p-header__site-name {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+
+.p-header__global-nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  width: 100%;
-  height: 70%;
+  height: 100%;
   text-align: center;
   background-color: #fff;
-  transform: translateX(150%);
-  transition: transform 1s;
-  &.isOpen {
-    transform: translateX(0);
-  }
   a {
     font-size: 1.5rem;
   }
@@ -231,36 +267,29 @@ header
     content: "\f16d";
   }
 }
-.p-header__shop-nav {
+.p-header__shop-nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  width: 100%;
-  height: 30%;
+  height: 100%;
   text-align: center;
   background-color: #fff;
-  transform: translateX(-150%);
-  transition: transform 1s;
-  &.isOpen {
-    transform: translateX(0);
-  }
   a {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .p-header__global-nav {
+  .p-header__container {
+    height: 7rem;
+  }
+  .p-header__established {
     position: static;
-    display: flex;
+  }
+  .p-header__global-nav-list {
+    flex-direction: row;
     justify-content: center;
-    z-index: 1;
-    background-color: #fff;
+    background-color: transparent;
     li:not(:first-child) {
       margin-left: 1.5rem;
     }
@@ -269,19 +298,11 @@ header
       color: $font-bk;
     }
   }
-  .p-header__established {
-    display: block;
-    order: 1;
-  }
-  .p-header__shop-nav {
-    position: static;
-    display: inline-block;
+  .p-header__shop-nav-list {
+    flex-direction: row;
+    justify-content: center;
     order: 2;
-    background-color: #fff;
-    ul {
-      display: flex;
-      justify-content: flex-end;
-    }
+    background-color: transparent;
     li {
       margin-left: 20px;
     }
@@ -297,7 +318,9 @@ header
 
 @media screen and (min-width: 1024px) {
   .p-header__container {
+    width: 95%;
     max-width: 1080px;
+    height: 8rem;
   }
 }
 
