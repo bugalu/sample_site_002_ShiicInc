@@ -196,4 +196,8 @@ sliderFrame.addEventListener('click', function () {
     }, intervalMillisecond);
   }
 });
+/* 要素チェック/開発用
+   ------------------------------------------------------ */
+
+console.log(document.querySelector('#check'));
 //# sourceMappingURL=main.js.map

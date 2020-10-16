@@ -26,54 +26,47 @@
 
   <!-- styles -->
   <link rel="stylesheet" href="./css/ress.css" />
-  <link rel="stylesheet" href="./css/style.css?540" />
+  <link rel="stylesheet" href="./css/style.css?758" />
 
 </head>
 
 <body>
   <header class="l-header font-xs">
     <div class="p-header__container">
-      <div class="p-header__inner">
-        <h1 class="p-header__logo">
-          <a href="#">
-            <picture>
-              <source srcset="./img/logo/logo_sp@1x.png 1x, 
-                              ./img/logo/logo_sp@2x.png 2x" media="(max-width: 767px)">
-              <source srcset="./img/logo/logo_tab@1x.png 1x, 
-                              ./img/logo/logo_tab@2x.png 2x" media="(max-width: 1023px)">
-              <img src="./img/logo/logo_pc@1x.png" srcset="./img/logo/logo_pc@1x.png 1x, ./img/logo/logo_pc@2x.png 2x" alt="">
-            </picture>
-          </a>
-          <span class="screen-reader-text">shiic</span>
-        </h1>
-        <nav>
-          <ul class="p-header__global-nav font-black" id="globalNav">
-            <li ontouchstart=""><a href="#p-about">About</a></li>
-            <li ontouchstart=""><a href="#p-music">Music</a></li>
-            <li ontouchstart=""><a href="#p-foods">Foods & Drinks</a></li>
-            <li ontouchstart=""><a href="#p-sights">Sights</a></li>
-            <li ontouchstart=""><a href="#p-company">Company</a></li>
-            <li ontouchstart="" class="facebook only-desktop">
-              <a href="/"><i class="fab fa-facebook fa-lg"></i></a>
-            </li>
-            <li ontouchstart="" class="instagram">
-              <a href="/"><i class="fab fa-instagram fa-lg"></i></a>
-            </li>
-          </ul>
-        </nav>
-        <!-- /.global-nav -->
-      </div>
-      <!-- /.p-header__inner -->
-      <p class="header__established">Since 2019 in Hokkaido</p>
-      <div class="p-header__shop-nav">
-        <ul class="font-black">
-          <li class="font-s"><a href="#" target="_blank">Sign Up</a></li>
-          <li class="font-s"><a href="#" target="_blank"><span>Sign In</span></a></li>
-          <li class="font-s"><a href="#" target="_blank"><span>Cart</span></a></li>
+      <h1 class="l-header__site-name">
+        <a href="#">
+          <picture>
+            <source srcset="./img/logo/logo_sp@1x.png 1x, 
+                            ./img/logo/logo_sp@2x.png 2x" media="(max-width: 767px)">
+            <source srcset="./img/logo/logo_tab@1x.png 1x, 
+                            ./img/logo/logo_tab@2x.png 2x" media="(max-width: 1023px)">
+            <img src="./img/logo/logo_pc@1x.png" srcset="./img/logo/logo_pc@1x.png 1x, ./img/logo/logo_pc@2x.png 2x" alt="">
+          </picture>
+        </a>
+        <span class="screen-reader-text">shiic</span>
+      </h1>
+      <p class="l-header__established p-header__established">Since 2019 in Hokkaido</p>
+      <nav>
+        <h2 class="screen-reader-text">サイト内メニュー</h2>
+        <ul class="p-header__global-nav font-black" id="globalNav">
+          <li ontouchstart=""><a href="#p-about">About</a></li>
+          <li ontouchstart=""><a href="#p-music">Music</a></li>
+          <li ontouchstart=""><a href="#p-foods">Foods & Drinks</a></li>
+          <li ontouchstart=""><a href="#p-sights">Sights</a></li>
+          <li ontouchstart=""><a href="#p-company">Company</a></li>
+          <li ontouchstart=""><a href="/" class="global-nav-fb"><span class="screen-reader-text">Facebook</span></a></li>
+          <li ontouchstart=""><a href="/" class="global-nav-ig"><span class="screen-reader-text">Instagram</span></a></li>
+        </ul>
+      </nav>
+      <!-- /.global-nav -->
+      <div class="p-header__shop-nav-wrapper">
+        <ul class="p-header__shop-nav font-black">
+          <li><a href="#" target="_blank">Sign Up</a></li>
+          <li><a href="#" target="_blank"><span>Sign In</span></a></li>
+          <li><a href="#" target="_blank"><span>Cart</span></a></li>
         </ul>
       </div>
       <!-- /.shop-nav -->
-
     </div>
     <!-- /.header -->
   </header>
@@ -110,7 +103,7 @@
     <!-- /.p-slider-container -->
 
     <!-- news -->
-    <section class="l-section news inview" data-type="fadeIn">
+    <section class="l-section news inview">
       <div class="p-news__deck">
         <div class="p-news__header bg-gray">
           <h2 class="p-news__heading">News!</h2>

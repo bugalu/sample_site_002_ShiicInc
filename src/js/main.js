@@ -159,6 +159,10 @@ sliderFrame.addEventListener('click', () => {
   }
 });
 
+/* 要素チェック/開発用
+   ------------------------------------------------------ */
+console.log(document.querySelector('#check'));
+
 
 
 
