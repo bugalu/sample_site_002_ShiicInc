@@ -198,6 +198,45 @@ li:not([class]),
 /* ======================================================
    Object
    ====================================================== */
+/* Component
+   ------------------------------------------------------ */
+.c-music__card-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 62.25%;
+  width: 100%;
+  box-shadow: -2px 2px 4px 0px #ddd;
+  color: inherit; }
+
+.c-music__card-content {
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem 0.5rem; }
+
+.c-music__card-heading {
+  font-weight: 500;
+  font-size: 1rem; 
+  font-family: "M PLUS 1p", sans-serif;}
+
+.c-music__card-text {
+  margin-top: 0.5rem; }
+
+.c-music__card-img {
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .c-music__card {
+    width: calc(100% / 3 - 16px); }
+    .c-music__card + .c-music__card {
+      margin-top: 0; }
+  .c-music__card-text {
+    min-height: 10rem; } }
+
+@media screen and (min-width: 1024px) {
+  .c-music__card-heading {
+    font-size: 1.25rem; } }
+
 /* Project
 ------------------------------------------------------ */
 /*** 
@@ -371,6 +410,8 @@ section共通
 ***/
 .p-section__heading {
   margin: 1rem 0; }
+  .p-section__heading::before {
+    content: "\0a7\0a2003"; }
 
 /***
 News section
@@ -489,40 +530,13 @@ Music section
 .p-music__grid {
   padding-top: 1rem; }
 
-.p-music__card {
-  padding: 1rem 1.5rem;
-  width: 100%;
-  box-shadow: -2px 2px 4px 0px #ddd; }
-  .p-music__card + .p-music__card {
-    margin-top: 1rem; }
-
-.p-music__card-heading {
-  font-weight: 500;
-  font-size: 1rem; 
-  font-family: "M PLUS 1p", sans-serif;}
-
-.p-music__card-img {
-  margin-top: 1rem; 
-  width: 100%;}
-
 @media screen and (min-width: 768px) {
   .p-music__grid {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    margin-top: 0rem; }
-  .p-music__card {
-    width: calc(33.33333% - 16px); }
-    .p-music__card + .p-music__card {
-      margin-top: 0; }
-  .p-music__text {
-    margin-top: 0.5rem;
-    min-height: 10rem; } }
-
-@media screen and (min-width: 1024px) {
-  .p-music__card-heading {
-    font-size: 1.25rem; } }
+    margin-top: 0rem; } }
 
 /***
 Foods and Drinks section
@@ -576,10 +590,10 @@ Sights section
 
 @media screen and (min-width: 1024px) {
   .p-sights__card {
-    width: calc(100% / 3 - 8px); }
+    width: calc(100% / 4 - 8px); }
   .p-sights__grid::after {
     display: block;
-    width: calc(100% / 3); 
+    width: calc(100% / 2 - 8px); 
     content: "";} }
 
 /*** 
