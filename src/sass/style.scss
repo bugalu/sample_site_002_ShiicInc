@@ -45,7 +45,8 @@ h4 {
   font-weight: 400;
 }
 .caption {
-  font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+  font-family: sans-serif;
+  font-size: 0.8rem;
 }
 
 /* ---------- background color ---------- */
@@ -567,10 +568,8 @@ Foods and Drinks section
 .p-foods__grid {
   width: 95%;
   margin: 1.5rem auto 0;
-  .card {
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
 }
 
@@ -580,6 +579,13 @@ Foods and Drinks section
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    .card {
+      width: calc(100% / 2 - 8px);
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .p-foods__grid {
     .card {
       width: calc(25% - 8px);
     }
@@ -594,18 +600,34 @@ Sights section
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto;
 }
 .p-sights__card {
-  margin-bottom: 10px;
-  width: calc(20% - 8px);
+  width: 100%;
   img {
     width: 100%;
-    min-width: 200px;
   }
 }
 .p-sights .caption {
+  margin: 0 auto;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .p-sights__card {
+    margin-top: 8px;
+    width: calc(100% / 2 - 8px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .p-sights__card {
+    width: calc(100% / 3 - 8px);
+  }
+  .p-sights__grid::after {
+    display: block;
+    content: "";
+    width: calc(100% / 3);
+  }
 }
 
 /*** 
