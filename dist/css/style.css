@@ -158,7 +158,8 @@ li:not([class]),
 
 .l-main {
   margin: 1rem auto 0; 
-  max-width: 1080px;}
+  max-width: 1080px;
+  width: 92%;}
 
 .l-section {
   margin: 1rem auto 0;
@@ -462,7 +463,8 @@ About section
   margin-top: 2rem; }
   .p-about__button .btn {
     padding: 0.25rem 1rem;
-    border: 1px solid purple;
+    border: 1px solid rgba(128, 0, 128, 0.4);
+    border-radius: 4px;
     cursor: pointer;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -484,43 +486,62 @@ About section
 Music section
 ***/
 .p-music__grid {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  margin-top: 1.5rem; }
+  padding-top: 1rem; }
 
 .p-music__card {
   padding: 1rem 1.5rem;
-  width: calc(33.33333% - 16px);
+  width: 100%;
   box-shadow: -2px 2px 4px 0px #ddd; }
-  .p-music__card img {
-    width: 100%; }
+  .p-music__card + .p-music__card {
+    margin-top: 1rem; }
 
 .p-music__card-heading {
-  font-weight: 500; 
+  font-weight: 500;
+  font-size: 1rem; 
   font-family: "M PLUS 1p", sans-serif;}
 
-.p-music__text {
-  margin-top: 0.5rem;
-  min-height: 10rem; }
+.p-music__card-img {
+  margin-top: 1rem; 
+  width: 100%;}
+
+@media screen and (min-width: 768px) {
+  .p-music__grid {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    margin-top: 0rem; }
+  .p-music__card {
+    width: calc(33.33333% - 16px); }
+    .p-music__card + .p-music__card {
+      margin-top: 0; }
+  .p-music__text {
+    margin-top: 0.5rem;
+    min-height: 10rem; } }
+
+@media screen and (min-width: 1024px) {
+  .p-music__card-heading {
+    font-size: 1.25rem; } }
 
 /***
 Foods and Drinks section
 ***/
 .p-foods__grid {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  margin-top: 1.5rem; 
-  width: 100%;}
-
-.p-foods__grid .card {
-  width: calc(25% - 8px); }
+  margin: 1.5rem auto 0; 
+  width: 95%;}
   .p-foods__grid .card img {
     width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .p-foods__grid {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    width: 100%; }
+    .p-foods__grid .card {
+      width: calc(25% - 8px); } }
 
 /***
 Sights section
