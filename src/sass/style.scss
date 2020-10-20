@@ -270,11 +270,12 @@ li:not([class]),
   width: 100%;
 }
 @media screen and (min-width: 768px) {
+  .c-card + .c-card {
+    margin-top: 0rem;
+  }
   .c-card {
-    width: calc(100% / 3 - 16px);
-    & + .c-card {
-      margin-top: 0rem;
-    }
+    width: calc(100% / 3);
+    margin: 0 16px;
   }
   .c-card-text {
     min-height: 10rem;
@@ -579,7 +580,7 @@ About section
 }
 
 /*** 
-first section
+first-section
 ***/
 
 .p-first-section__grid {
@@ -589,12 +590,12 @@ first section
   .p-first-section__grid {
     display: flex;
     justify-content: space-between;
-    margin-top: 0rem;
+    margin-top: 2rem;
   }
 }
 
 /***
-Foods and Drinks section
+second-section
 ***/
 .p-second-section__grid {
   width: 95%;
@@ -624,7 +625,7 @@ Foods and Drinks section
 }
 
 /***
-Sights section
+third-section
 ***/
 .p-third-section__grid {
   display: flex;
