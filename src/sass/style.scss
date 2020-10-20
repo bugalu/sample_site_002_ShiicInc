@@ -651,6 +651,7 @@ second-section
   }
   .p-second-section__img {
     order: 1;
+    flex-shrink: 0;
     align-self: center;
     width: 304px;
     margin-right: 1rem;
