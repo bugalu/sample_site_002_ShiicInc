@@ -187,7 +187,7 @@ li:not([class]),
   margin: 1rem auto 0;
 }
 .l-section {
-  margin: 1rem auto 0;
+  margin: 2rem auto 0;
   max-width: 1080px;
   width: 95%;
 }
@@ -227,46 +227,61 @@ li:not([class]),
    ====================================================== */
 /* Component
    ------------------------------------------------------ */
-.c-music__card {
+.c-card + .c-card {
+  margin-top: 2rem;
 }
-.c-music__card-wrapper {
+.c-card-wrapper {
   display: inline-block;
   position: relative;
   width: 100%;
   padding-top: 62.25%;
-  box-shadow: -2px 2px 4px 0px #ddd;
+  box-shadow: -2px 2px 6px 3px rgba(0, 0, 0, 0.1);
   color: inherit;
+  &:hover {
+    img {
+      opacity: 0.8;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 212, 255, 0.1);
+    }
+  }
 }
-.c-music__card-content {
-  margin-top: 0.5rem;
-  padding: 1rem 1.5rem 0.5rem;
+.c-card-content {
+  margin-top: 1rem;
+  padding: 1rem;
 }
-.c-music__card-heading {
+.c-card-heading {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
-.c-music__card-text {
+.c-card-text {
   margin-top: 0.5rem;
 }
-.c-music__card-img {
+.c-card-img {
   position: absolute;
   top: 0;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .c-music__card {
+  .c-card {
     width: calc(100% / 3 - 16px);
-    & + .c-music__card {
-      margin-top: 0;
+    & + .c-card {
+      margin-top: 0rem;
     }
   }
-  .c-music__card-text {
+  .c-card-text {
     min-height: 10rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .c-music__card-heading {
+  .c-card-heading {
     font-size: 1.25rem;
   }
 }
@@ -564,14 +579,14 @@ About section
 }
 
 /*** 
-Music section
+first section
 ***/
 
-.p-music__grid {
+.p-first-section__grid {
   padding-top: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .p-music__grid {
+  .p-first-section__grid {
     display: flex;
     justify-content: space-between;
     margin-top: 0rem;
