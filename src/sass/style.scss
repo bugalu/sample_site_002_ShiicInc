@@ -596,7 +596,7 @@ first section
 /***
 Foods and Drinks section
 ***/
-.p-foods__grid {
+.p-second-section__grid {
   width: 95%;
   margin: 1.5rem auto 0;
   img {
@@ -605,7 +605,7 @@ Foods and Drinks section
 }
 
 @media screen and (min-width: 768px) {
-  .p-foods__grid {
+  .p-second-section__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -616,7 +616,7 @@ Foods and Drinks section
   }
 }
 @media screen and (min-width: 1024px) {
-  .p-foods__grid {
+  .p-second-section__grid {
     .card {
       width: calc(25% - 8px);
     }
@@ -626,35 +626,35 @@ Foods and Drinks section
 /***
 Sights section
 ***/
-.p-sights__grid {
+.p-third-section__grid {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   margin: 1.5rem auto;
 }
-.p-sights__card {
+.p-third-section__card {
   width: 100%;
   img {
     width: 100%;
   }
 }
-.p-sights .caption {
+.p-third-section .caption {
   margin: 0 auto;
   text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-  .p-sights__card {
+  .p-third-section__card {
     margin-top: 8px;
     width: calc(100% / 2 - 8px);
   }
 }
 @media screen and (min-width: 1024px) {
-  .p-sights__card {
+  .p-third-section__card {
     width: calc(100% / 4 - 8px);
   }
-  .p-sights__grid::after {
+  .p-third-section__grid::after {
     display: block;
     content: "";
     width: calc(100% / 2 - 8px);
