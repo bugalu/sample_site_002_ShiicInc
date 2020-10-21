@@ -314,9 +314,6 @@ header
   height: 100%;
   text-align: center;
   background-color: #fff;
-  a {
-    font-size: 1.5rem;
-  }
   .global-nav-fb::before {
     font-family: "Font Awesome 5 Brands";
     font-weight: 900;
@@ -335,13 +332,11 @@ header
   height: 100%;
   text-align: center;
   background-color: #fff;
-  a {
-    font-size: 1.5rem;
-  }
 }
 
 @media screen and (min-width: 768px) {
   .p-header__container {
+    width: 92%;
     height: 7rem;
   }
   .p-header__established {
@@ -355,7 +350,6 @@ header
       margin-left: 1.5rem;
     }
     a {
-      font-size: 0.9375rem;
       color: $font-bk;
     }
   }
@@ -368,7 +362,6 @@ header
       margin-left: 20px;
     }
     a {
-      font-size: 0.9375rem;
       color: $font-bk;
     }
     &::before {
@@ -379,7 +372,7 @@ header
 
 @media screen and (min-width: 1024px) {
   .p-header__container {
-    width: 95%;
+    width: 92%;
     max-width: 1080px;
     height: 8rem;
   }
@@ -621,7 +614,7 @@ second-section
 }
 .p-second-section__img {
   float: left;
-  width: 50%;
+  width: 208px;
   margin-right: 0.5rem;
 }
 
@@ -642,7 +635,7 @@ second-section
   }
 
   .p-second-section__media + .p-second-section__media {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .p-second-section__media-content {
     order: 2;
@@ -653,7 +646,6 @@ second-section
     order: 1;
     flex-shrink: 0;
     align-self: center;
-    width: 304px;
     margin-right: 1rem;
   }
   .p-second-section__media:nth-of-type(4n) {
