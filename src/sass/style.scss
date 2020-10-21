@@ -183,17 +183,26 @@ li:not([class]),
   }
 }
 .l-main {
-  width: 92%;
+  width: 95%;
   max-width: 1080px;
   margin: 1rem auto 0;
 }
 .l-section {
-  margin: 3rem auto 0;
-  max-width: 1080px;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
   width: 95%;
-}
-.l-footer {
-  margin-top: 4rem;
+  &:nth-of-type(2n + 3)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin: 0 calc(50% - 50vw);
+    background-color: #eee;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -225,6 +234,9 @@ li:not([class]),
    ====================================================== */
 /* Component
    ------------------------------------------------------ */
+.c-card {
+  background-color: #fafafa;
+}
 .c-card + .c-card {
   margin-top: 2rem;
 }
@@ -574,7 +586,6 @@ About section
 /*** 
 first-section
 ***/
-
 .p-first-section__grid {
   margin-top: 2rem;
 }
