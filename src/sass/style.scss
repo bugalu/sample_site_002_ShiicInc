@@ -23,7 +23,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   color: $font-bk;
 }
 *,
@@ -33,6 +34,8 @@ body {
   list-style: none;
   text-decoration: none;
   line-height: 1.75;
+  // overflow-wrap: break-word;
+  hyphens: auto;
 }
 /* default style
    ------------------------------------------------------ */
@@ -84,8 +87,11 @@ li:not([class]),
   //768px〜
   @media screen and (min-width: 768px) {
     font-size: calc(
-      (#{$max-rem-p - $min-rem-p} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) + #{$min-rem-p +
-        rem}
+      (#{$max-rem-p - $min-rem-p} * 16) *
+        (
+          (100vw - #{$variable-start + px}) /
+            (#{$variable-end - $variable-start})
+        ) + #{$min-rem-p + rem}
     );
   }
   //1024px〜
@@ -103,8 +109,11 @@ li:not([class]),
   //768px〜
   @media screen and (min-width: 768px) {
     font-size: calc(
-      (#{$max-rem-xs - $min-rem-xs} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) +
-        #{$min-rem-xs + rem}
+      (#{$max-rem-xs - $min-rem-xs} * 16) *
+        (
+          (100vw - #{$variable-start + px}) /
+            (#{$variable-end - $variable-start})
+        ) + #{$min-rem-xs + rem}
     );
   }
   //1024px〜
@@ -122,8 +131,11 @@ li:not([class]),
   //768px〜
   @media screen and (min-width: 768px) {
     font-size: calc(
-      (#{$max-rem-s - $min-rem-s} * 16) * ((100vw - #{$variable-start + px}) / (#{$variable-end - $variable-start})) + #{$min-rem-s +
-        rem}
+      (#{$max-rem-s - $min-rem-s} * 16) *
+        (
+          (100vw - #{$variable-start + px}) /
+            (#{$variable-end - $variable-start})
+        ) + #{$min-rem-s + rem}
     );
   }
   //1024px〜
@@ -190,7 +202,7 @@ li:not([class]),
 .l-section {
   position: relative;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 95%;
   &:nth-of-type(2n + 3)::before {
     content: "";
@@ -466,11 +478,11 @@ header
 /*** 
 section共通
 ***/
-.p-section__heading {
-  margin: 1rem 0;
-  &::before {
-    content: "\0a7\0a2003";
-  }
+.p-section__heading::before {
+  content: "\0a7\0a2003";
+}
+.p-section__read {
+  margin-top: 2rem;
 }
 
 /***
@@ -552,6 +564,10 @@ About section
   list-style-type: disc;
   list-style-position: inside;
 }
+.p-about__sublist li {
+  margin-left: 1rem;
+  list-style-type: circle;
+}
 
 .p-about a {
   text-decoration: underline;
@@ -579,6 +595,9 @@ About section
       top: 1px;
       // box-shadow: -1px -1px 5px gray, 1px 1px 5px gray;
       box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
+    }
+    &::after {
+      content: url(../img/icon/mail.svg);
     }
   }
 }
