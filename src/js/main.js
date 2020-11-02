@@ -164,10 +164,16 @@ sliderFrame.addEventListener("click", () => {
    ====================================================== */
 const menuBtn = document.querySelector("#js-menuButton");
 const body = document.querySelector("body");
+const menus = document.querySelectorAll("#globalNav a");
 menuBtn.addEventListener("click", () => {
   body.classList.toggle("isOpen");
+});
+menus.forEach((menu) => {
+  menu.addEventListener("click", () => {
+    body.classList.remove("isOpen");
+  });
 });
 
 /* 要素チェック/開発用
    ------------------------------------------------------ */
-console.log(document.querySelector("#check"));
+console.log(menus);

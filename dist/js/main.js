@@ -202,11 +202,17 @@ sliderFrame.addEventListener("click", function () {
 
 var menuBtn = document.querySelector("#js-menuButton");
 var body = document.querySelector("body");
+var menus = document.querySelectorAll("#globalNav a");
 menuBtn.addEventListener("click", function () {
   body.classList.toggle("isOpen");
+});
+menus.forEach(function (menu) {
+  menu.addEventListener("click", function () {
+    body.classList.remove("isOpen");
+  });
 });
 /* 要素チェック/開発用
    ------------------------------------------------------ */
 
-console.log(document.querySelector("#check"));
+console.log(menus);
 //# sourceMappingURL=main.js.map
