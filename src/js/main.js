@@ -163,9 +163,9 @@ sliderFrame.addEventListener("click", () => {
    drawer
    ====================================================== */
 const menuBtn = document.querySelector("#js-menuButton");
-const header = document.querySelector("#js-header");
+const body = document.querySelector("body");
 menuBtn.addEventListener("click", () => {
-  header.classList.toggle("isOpen");
+  body.classList.toggle("isOpen");
 });
 
 /* 要素チェック/開発用

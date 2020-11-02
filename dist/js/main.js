@@ -201,9 +201,9 @@ sliderFrame.addEventListener("click", function () {
    ====================================================== */
 
 var menuBtn = document.querySelector("#js-menuButton");
-var header = document.querySelector("#js-header");
+var body = document.querySelector("body");
 menuBtn.addEventListener("click", function () {
-  header.classList.toggle("isOpen");
+  body.classList.toggle("isOpen");
 });
 /* 要素チェック/開発用
    ------------------------------------------------------ */

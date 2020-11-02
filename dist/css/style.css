@@ -100,6 +100,9 @@ li:not([class]),
     .font-s {
       font-size: 0.9375rem; } }
 
+.isOpen .font-s {
+  font-size: 1rem; }
+
 .font-l {
   font-size: calc(0.20625remrem + 1.725remvw); }
   @media (min-width: 1200px) {
@@ -115,6 +118,12 @@ li:not([class]),
 /* ======================================================
    Layout
    ====================================================== */
+body.isOpen {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+
 .l-header {
   margin-top: 1rem; }
 

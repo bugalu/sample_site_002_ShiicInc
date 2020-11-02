@@ -144,6 +144,9 @@ li:not([class]),
     font-size: $max-rem-s + rem; //最大値
   }
 }
+.isOpen .font-s {
+  font-size: 1rem;
+}
 
 .font-l {
   @include font-size(1.5rem);
@@ -156,6 +159,13 @@ li:not([class]),
 /* ======================================================
    Layout
    ====================================================== */
+body.isOpen {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 .l-header {
   margin-top: 1rem;
 }
