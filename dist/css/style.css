@@ -627,7 +627,8 @@ About section
       box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1); 
       opacity: 0.8;}
     .p-about__button .btn::after {
-      content: url(../img/icon/mail.svg); }
+      margin-left: 0.5rem; 
+      content: url(../img/icon/mail.svg);}
 
 /*** 
 first-section
