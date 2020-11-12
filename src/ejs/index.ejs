@@ -74,15 +74,21 @@
           Since 2019 in Hokkaido
         </p>
 
-        <button class="p-header__g-nav-menu" id="js-menuButton" type="button">
+        <button
+          class="p-header__g-nav-menu"
+          id="js-menuButton"
+          type="button"
+          aria-controls="global-nav shop-nav"
+          aria-expanded="false"
+        >
           <span class="g-nav-menu-bar upper"></span>
           <span class="g-nav-menu-text">Menu</span>
           <span class="g-nav-menu-bar lower"></span>
         </button>
 
-        <nav class="l-header__global-nav">
+        <nav role="navigation" class="l-header__global-nav">
           <h2 class="screen-reader-text">サイト内メニュー</h2>
-          <ul class="p-header__global-nav-list" id="globalNav">
+          <ul class="p-header__global-nav-list" id="global-nav">
             <li ontouchstart="" class="font-s"><a href="#about">About</a></li>
             <li ontouchstart="" class="font-s">
               <a href="#first-section">Section1</a>
@@ -110,7 +116,7 @@
         </nav>
         <!-- /.global-nav -->
         <div class="l-header__shop-nav">
-          <ul class="p-header__shop-nav-list">
+          <ul class="p-header__shop-nav-list" id="shop-nav">
             <li class="font-s">
               <a href="" title="ダミーリンクです。どこにも遷移しません。">
                 Sign Up

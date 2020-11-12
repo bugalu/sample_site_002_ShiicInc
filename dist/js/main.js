@@ -202,13 +202,20 @@ sliderFrame.addEventListener("click", function () {
 
 var menuBtn = document.querySelector("#js-menuButton");
 var body = document.querySelector("body");
-var menus = document.querySelectorAll("#globalNav a");
+var menus = document.querySelectorAll("#global-nav a");
 menuBtn.addEventListener("click", function () {
   body.classList.toggle("isOpen");
+
+  if (menuBtn.getAttribute("aria-expanded") === "false") {
+    menuBtn.setAttribute("aria-expanded", "true");
+  } else if (menuBtn.getAttribute("aria-expanded") === "true") {
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
 });
 menus.forEach(function (menu) {
   menu.addEventListener("click", function () {
     body.classList.remove("isOpen");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
 /* 要素チェック/開発用

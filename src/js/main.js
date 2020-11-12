@@ -164,13 +164,19 @@ sliderFrame.addEventListener("click", () => {
    ====================================================== */
 const menuBtn = document.querySelector("#js-menuButton");
 const body = document.querySelector("body");
-const menus = document.querySelectorAll("#globalNav a");
+const menus = document.querySelectorAll("#global-nav a");
 menuBtn.addEventListener("click", () => {
   body.classList.toggle("isOpen");
+  if (menuBtn.getAttribute("aria-expanded") === "false") {
+    menuBtn.setAttribute("aria-expanded", "true");
+  } else if (menuBtn.getAttribute("aria-expanded") === "true") {
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
 });
 menus.forEach((menu) => {
   menu.addEventListener("click", () => {
     body.classList.remove("isOpen");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
 
