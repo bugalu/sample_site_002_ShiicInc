@@ -298,13 +298,16 @@ header
   left: 0;
   display: inline-block;
   text-align: center; }
-  .p-header__site-name p {
-    position: absolute;
-    top: 3.25rem;
-    right: 0;
-    left: 0;
-    color: #219781; 
-    font-size: 1.5rem;}
+  .p-header__site-name img {
+    width: 60vw; }
+
+.p-header__site-sub-name {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  left: 0;
+  color: #219781; 
+  font-size: 1.25rem;}
 
 .p-header__global-nav-list {
   display: -webkit-box;
@@ -340,6 +343,8 @@ header
   .p-header__container {
     width: 92%;
     height: 5rem; }
+  .p-header__site-sub-name {
+    top: 3rem; }
   .p-header__established {
     position: static; }
   .p-header__global-nav-list {
@@ -371,7 +376,10 @@ header
   .p-header__container {
     max-width: 1080px;
     width: 92%;
-    height: 8rem; } }
+    height: 8rem; }
+  .p-header__site-sub-name {
+    top: 3.25rem;
+    font-size: 1.5rem; } }
 
 /**
  * global-header-menu
