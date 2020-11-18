@@ -298,8 +298,9 @@ header
   left: 0;
   display: inline-block;
   text-align: center; }
-  .p-header__site-name img {
-    width: 60vw; }
+
+.p-header__logo-img {
+  width: 200px; }
 
 .p-header__site-sub-name {
   position: absolute;
@@ -343,6 +344,8 @@ header
   .p-header__container {
     width: 92%;
     height: 5rem; }
+  .p-header__logo-img {
+    width: 320px; }
   .p-header__site-sub-name {
     top: 3rem; }
   .p-header__established {
