@@ -795,8 +795,8 @@ footer
     text-decoration: none; }
   .p-footer__logo {
     margin: 30px auto 30px;
-    max-width: 120px;
-    width: 20vw; }
+    max-width: 240px;
+    width: 50vw; }
 
 /*** 
 Return top
