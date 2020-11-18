@@ -711,7 +711,8 @@ About section
   .btn-text {
     position: relative;
     top: 50%;
-    transform: translateY(-40%);
+    transform: translateY(-45%);
+    font-family: "Josefin Sans", sans-serif;
     color: $corporate-color;
     &::after {
       content: url(../img/icon/mail.svg);
