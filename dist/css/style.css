@@ -34,7 +34,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: #800080;
+  color: #219781;
   font-weight: 400; 
   font-family: "Josefin Sans", sans-serif;}
 
@@ -46,8 +46,8 @@ h4 {
 .bg-gray {
   background: dimgray; }
 
-.bg-purple {
-  background: purple; }
+.bg-corporate-color {
+  background: #219781; }
 
 .bg-smoke {
   background-color: whitesmoke; }
@@ -124,7 +124,7 @@ body.isOpen {
   height: 100%; }
 
 .l-header {
-  margin-top: 1rem; }
+  margin-top: 0.5rem; }
 
 .l-header__established {
   position: absolute;
@@ -193,6 +193,8 @@ body.isOpen {
     content: "";}
 
 @media screen and (min-width: 768px) {
+  .l-header {
+    margin-top: 1rem; }
   .l-header__established {
     left: 0; 
     display: inline-block;}
@@ -214,6 +216,10 @@ body.isOpen {
             transform: translateX(0); }
   .l-main {
     margin-top: 3rem; } }
+
+@media screen and (min-width: 1024px) {
+  .l-header {
+    margin-top: 2rem; } }
 
 /* ======================================================
    Object
@@ -628,7 +634,7 @@ About section
   margin-top: 2rem; }
   .p-about__button .btn {
     padding: 0.25rem 1rem;
-    border: 1px solid rgba(128, 0, 128, 0.4);
+    border: 1px solid rgba(33, 151, 129, 0.7);
     border-radius: 4px;
     cursor: pointer;
     -webkit-transition: 0.4s;
@@ -639,16 +645,22 @@ About section
         -ms-user-select: none;
             user-select: none; }
     .p-about__button .btn:hover {
-      background: purple;
-      color: white; }
+      background: rgba(33, 151, 129, 0.2); }
     .p-about__button .btn:active {
       position: relative;
       top: 1px;
       box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1); 
       opacity: 0.8;}
-    .p-about__button .btn::after {
-      margin-left: 0.5rem; 
-      content: url(../img/icon/mail.svg);}
+  .p-about__button .btn-text {
+    position: relative;
+    top: 50%;
+    color: #219781; 
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);}
+    .p-about__button .btn-text::after {
+      margin-left: 0.5rem;
+      content: url(../img/icon/mail.svg);
+      vertical-align: middle; }
 
 /*** 
 first-section

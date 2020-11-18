@@ -8,6 +8,7 @@ $rfs-base-value: 1rem;
 /* variables
    ------------------------------------------------------ */
 $font-bk: #555555;
+$corporate-color: #219781;
 
 /* variables 可変フォントサイズ用の変数
    ------------------------------------------------------
@@ -42,7 +43,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: #800080;
+  color: $corporate-color;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
 }
@@ -55,8 +56,8 @@ h4 {
 .bg-gray {
   background: dimgray;
 }
-.bg-purple {
-  background: purple;
+.bg-corporate-color {
+  background: #219781;
 }
 .bg-smoke {
   background-color: whitesmoke;
@@ -166,7 +167,7 @@ body.isOpen {
 }
 
 .l-header {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .l-header__established {
   position: absolute;
@@ -227,6 +228,9 @@ body.isOpen {
 }
 
 @media screen and (min-width: 768px) {
+  .l-header {
+    margin-top: 1rem;
+  }
   .l-header__established {
     display: inline-block;
     left: 0;
@@ -247,6 +251,11 @@ body.isOpen {
   }
   .l-main {
     margin-top: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .l-header {
+    margin-top: 2rem;
   }
 }
 
@@ -682,15 +691,14 @@ About section
   position: relative;
   margin-top: 2rem;
   .btn {
-    border: 1px solid rgba(purple, 0.4);
+    border: 1px solid rgba($corporate-color, 0.7);
     border-radius: 4px;
     padding: 0.25rem 1rem;
     cursor: pointer;
     transition: 0.4s;
     user-select: none;
     &:hover {
-      background: purple;
-      color: white;
+      background: rgba($corporate-color, 0.2);
     }
     &:active {
       opacity: 0.8;
@@ -699,9 +707,16 @@ About section
       // box-shadow: -1px -1px 5px gray, 1px 1px 5px gray;
       box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
     }
+  }
+  .btn-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+    color: $corporate-color;
     &::after {
       content: url(../img/icon/mail.svg);
       margin-left: 0.5rem;
+      vertical-align: middle;
     }
   }
 }
