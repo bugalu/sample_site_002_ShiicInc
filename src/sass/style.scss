@@ -874,13 +874,16 @@ footer
 /*** 
 Return top
 ***/
-.return-to-top {
+.return-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: 0.2s;
+  bottom: 0.5rem;
+  right: 0.5rem;
   color: gray;
-  opacity: 0.6;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.return-top.visible {
+  opacity: 0.5;
 }
 /* Accessibility
    ------------------------------------------------------ */

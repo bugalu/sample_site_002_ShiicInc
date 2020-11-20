@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" width="595px" height="101px" viewBox="0 0 595 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="enable-background:new 0 0 595 101;">
+<svg version="1.1" width="595px" height="101px" viewBox="0 0 595 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style type="text/css">
-	.st0{fill:#ffffff;}
-	
-		.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#EBEBEB;fill-opacity:0;stroke:#ffffff;stroke-width:4.6506;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.8602;}
+	.st0{fill:#219781;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#EBEBEB;fill-opacity:0;stroke:#219781;stroke-width:4.6506;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.8602;}
 	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#219781;}
 	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#12A58A;}
 	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#04B494;}

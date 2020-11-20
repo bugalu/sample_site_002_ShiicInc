@@ -801,14 +801,17 @@ footer
 /*** 
 Return top
 ***/
-.return-to-top {
+.return-top {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 0.5rem;
+  bottom: 0.5rem;
   color: gray;
-  opacity: 0.6; 
-  -webkit-transition: 0.2s;
-  transition: 0.2s;}
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
+
+.return-top.visible {
+  opacity: 0.5; }
 
 /* Accessibility
    ------------------------------------------------------ */

@@ -38,7 +38,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="./css/ress.css" />
-    <link rel="stylesheet" href="./css/style.css?143" />
+    <link rel="stylesheet" href="./css/style.css?7" />
   </head>
 
   <body>
@@ -46,32 +46,8 @@
       <div class="p-header__container">
         <h1 class="p-header__site-name">
           <a href="#">
-            <!-- <picture>
-              <source
-                srcset="
-                  ./img/logo/logo_sp@1x.png 1x,
-                  ./img/logo/logo_sp@2x.png 2x
-                "
-                media="(max-width: 767px)"
-              />
-              <source
-                srcset="
-                  ./img/logo/logo_tab@1x.png 1x,
-                  ./img/logo/logo_tab@2x.png 2x
-                "
-                media="(max-width: 1023px)"
-              />
-              <img
-                src="./img/logo/logo_pc@1x.png"
-                srcset="
-                  ./img/logo/logo_pc@1x.png 1x,
-                  ./img/logo/logo_pc@2x.png 2x
-                "
-                alt=""
-              />
-            </picture> -->
             <img
-              src="./img/logo/or-ikeda_logo.svg"
+              src="img/logo/or-ikeda_logo.svg"
               width="320"
               height="54"
               alt="ORイケダ"
@@ -667,12 +643,13 @@
         <li><a href="#third-section">Menu 3</a></li>
         <li><a href="">Contact</a></li>
       </ul>
-      <a href="/"
-        ><img
+      <a href="#top">
+        <img
           src="./img/logo/or-ikeda_logo2.svg"
           alt="ORイケダ"
           class="p-footer__logo"
-      /></a>
+        />
+      </a>
       <div class="p-footer__info font-xs">
         <address>
           Ｘ県Ｙ市Ｚ区Ａ町0番0号（<a
@@ -686,7 +663,11 @@
 
       <p class="copyright">&copy;2019-2020 Office OR-IKEDA</p>
     </footer>
-    <a href="#"><i class="fas fa-caret-square-up fa-2x return-to-top"></i></a>
+    <a href="#"
+      ><i class="fas fa-caret-square-up fa-2x return-top js-returnTop">
+        <p class="screen-reader-text">ページトップに戻る</p>
+      </i></a
+    >
     <script src="./js/main.js"></script>
   </body>
 </html>

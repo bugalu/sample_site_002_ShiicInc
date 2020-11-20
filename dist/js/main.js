@@ -218,6 +218,20 @@ menus.forEach(function (menu) {
     menuBtn.setAttribute("aria-expanded", "false");
   });
 });
+/* ======================================================
+   return to top
+   ====================================================== */
+
+var returnTop = document.querySelector(".js-returnTop");
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= window.innerHeight / 2) {
+    //window.heightの半分を越えたらvisibleクラスを追加
+    returnTop.classList.add("visible");
+  } else if (window.scrollY < window.innerHeight / 2) {
+    //window.heightの半分内に戻ったらvisibleクラスを削除
+    returnTop.classList.remove("visible");
+  }
+});
 /* 要素チェック/開発用
    ------------------------------------------------------ */
 

@@ -180,6 +180,21 @@ menus.forEach((menu) => {
   });
 });
 
+/* ======================================================
+   return to top
+   ====================================================== */
+const returnTop = document.querySelector(".js-returnTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= window.innerHeight / 2) {
+    //window.heightの半分を越えたらvisibleクラスを追加
+    returnTop.classList.add("visible");
+  } else if (window.scrollY < window.innerHeight / 2) {
+    //window.heightの半分内に戻ったらvisibleクラスを削除
+    returnTop.classList.remove("visible");
+  }
+});
+
 /* 要素チェック/開発用
    ------------------------------------------------------ */
 console.log(menus);
