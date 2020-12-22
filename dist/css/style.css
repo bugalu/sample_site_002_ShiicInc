@@ -533,7 +533,7 @@ header
 section共通
 ***/
 .p-section__heading::before {
-  content: "\0a7\0a2003"; }
+  content: "\00a7\2009"; }
 
 .p-section__read {
   margin-top: 2rem; }
