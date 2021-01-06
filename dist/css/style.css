@@ -102,18 +102,6 @@ li:not([class]),
 .isOpen .font-s {
   font-size: 1rem; }
 
-.font-l {
-  font-size: calc(0.20625remrem + 1.725remvw); }
-  @media (min-width: 1200px) {
-    .font-l {
-      font-size: 1.5rem; } }
-
-.font-xl {
-  font-size: calc(0.25625remrem + 2.325remvw); }
-  @media (min-width: 1200px) {
-    .font-xl {
-      font-size: 2rem; } }
-
 /* ======================================================
    Layout
    ====================================================== */
